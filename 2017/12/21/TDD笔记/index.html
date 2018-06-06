@@ -43,7 +43,7 @@
     
     <title>
         
-            Hello World | 
+            TDD笔记 | 
         
         Benny&#39;s Notebook
     </title>
@@ -239,7 +239,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Benny&#39;s Notebook">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/03/18/hello-world/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2017/12/21/TDD笔记/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Benny&#39;s Notebook">
@@ -254,16 +254,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/03/18/hello-world/">
+    <meta property="og:url" content="http://yoursite.com/2017/12/21/TDD笔记/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | Benny&#39;s Notebook">
+    <meta property="og:title" content="TDD笔记 | Benny&#39;s Notebook">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Sun Mar 18 2018 14:49:47 GMT+0800">
-        <meta property="article:modified_time" content="Mon Mar 19 2018 15:16:11 GMT+0800">
+        <meta property="article:published_time" content="Thu Dec 21 2017 19:22:36 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jun 06 2018 17:43:11 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/03/18/hello-world/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/12/21/TDD笔记/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -335,7 +335,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.0.0.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自己写测试的心得"><span class="post-toc-number">1.</span> <span class="post-toc-text">自己写测试的心得</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在egg中写测试"><span class="post-toc-number">2.</span> <span class="post-toc-text">在egg中写测试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一步，编写测试"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">第一步，编写测试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础讲解"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">基础讲解</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二步-配置测试"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">第二步 配置测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三步-启动测试"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">第三步 启动测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TDD是什么"><span class="post-toc-number">3.</span> <span class="post-toc-text">TDD是什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TDD的核心"><span class="post-toc-number">4.</span> <span class="post-toc-text">TDD的核心</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么要测试，什么时候测试"><span class="post-toc-number">5.</span> <span class="post-toc-text">为什么要测试，什么时候测试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试的概念"><span class="post-toc-number">6.</span> <span class="post-toc-text">测试的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试效果的指标"><span class="post-toc-number">7.</span> <span class="post-toc-text">测试效果的指标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试的误区"><span class="post-toc-number">8.</span> <span class="post-toc-text">测试的误区</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试的工具"><span class="post-toc-number">9.</span> <span class="post-toc-text">测试的工具</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mocha"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">mocha</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#describe"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">describe</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#it"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">it</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#supertest"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">supertest</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#node自带断言库-assert"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">node自带断言库 assert</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何写好测试"><span class="post-toc-number">10.</span> <span class="post-toc-text">如何写好测试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TDD和时间的关系"><span class="post-toc-number">11.</span> <span class="post-toc-text">TDD和时间的关系</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TDD的好处"><span class="post-toc-number">12.</span> <span class="post-toc-text">TDD的好处</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#TDD教程"><span class="post-toc-number"></span> <span class="post-toc-text">TDD教程</span></a>
     </ul>
     
 
@@ -367,7 +367,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                TDD笔记
             </p>
         </div>
 
@@ -386,7 +386,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>John Doe</strong>
-        <span>3月 18, 2018</span>
+        <span>12月 21, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -418,7 +418,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=http://yoursite.com/2018/03/18/hello-world/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=TDD笔记&url=http://yoursite.com/2017/12/21/TDD笔记/index.html&pic=http://yoursite.com/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -427,7 +427,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=http://yoursite.com/2018/03/18/hello-world/index.html&via=John Doe" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=TDD笔记&url=http://yoursite.com/2017/12/21/TDD笔记/index.html&via=John Doe" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -436,7 +436,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/03/18/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/21/TDD笔记/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -445,7 +445,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/03/18/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/21/TDD笔记/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -454,7 +454,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2018/03/18/hello-world/index.html&title=Hello World" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2017/12/21/TDD笔记/index.html&title=TDD笔记" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -463,7 +463,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Benny&#39;s Notebook&title=Hello World&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2018/03/18/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Benny&#39;s Notebook&title=TDD笔记&summary=&pics=http://yoursite.com/img/favicon.jpg&url=http://yoursite.com/2017/12/21/TDD笔记/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -472,7 +472,7 @@
 
     <!-- Share Telegram -->
     
-        <a class="post_share-link" href="https://telegram.me/share/url?url=http://yoursite.com/2018/03/18/hello-world/index.html&text=Hello World" target="_blank">
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://yoursite.com/2017/12/21/TDD笔记/index.html&text=TDD笔记" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Telegram
             </li>
@@ -488,18 +488,147 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><pre><code>$ hexo new &quot;My New Post&quot;
-</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h4 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h4><pre><code class="bash">$ hexo server
+        <pre><code>graph TD
+需求提出--&gt;抽象出模型
+抽象出模型--&gt;转化出测试用例
+转化出测试用例--&gt;TDD:定义接口测试接口
+抽象出模型--&gt;|not TDD|code
+TDD:定义接口测试接口--&gt;提交PR并讨论
+提交PR并讨论--&gt;code
+code --&gt;整合
+
+</code></pre><h2 id="自己写测试的心得"><a href="#自己写测试的心得" class="headerlink" title="自己写测试的心得"></a>自己写测试的心得</h2><p>普通写代码就是直接撸，写成啥是啥，错了就改<br>正确的写测试就是  先想好接口，根据接口来写测试用例，最后再写代码去通过测试<br>这就叫谋而后动</p>
+<p>今天跟了一个测试教程<br>学会了测试语言describe it   before after(mocha)  expect(supettest)</p>
+<h2 id="在egg中写测试"><a href="#在egg中写测试" class="headerlink" title="在egg中写测试"></a>在egg中写测试</h2><p>这是应用的单元测试，不是插件和框架的单元测试</p>
+<p>内置的egg-bin模块，这个模块已经内置了所有测试所需要的好用的模块。<br>包括：Mocha、co-mocha、power-assert，istanbul<br>测试mock辅助模块egg-mock</p>
+<h3 id="第一步，编写测试"><a href="#第一步，编写测试" class="headerlink" title="第一步，编写测试"></a>第一步，编写测试</h3><h4 id="基础讲解"><a href="#基础讲解" class="headerlink" title="基础讲解"></a>基础讲解</h4><h3 id="第二步-配置测试"><a href="#第二步-配置测试" class="headerlink" title="第二步 配置测试"></a>第二步 配置测试</h3><p>在==package.json==中配置==script.test==</p>
+<pre><code class="js">{
+    &quot;scripts&quot;:{
+        &quot;test&quot;:&quot;egg-bin test&quot;
+    }
+}
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><pre><code class="bash">$ hexo generate
+<h3 id="第三步-启动测试"><a href="#第三步-启动测试" class="headerlink" title="第三步 启动测试"></a>第三步 启动测试</h3><pre><code class="js">npm test
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/24997923" target="_blank" rel="noopener">打开TDD的正确姿势</a></p>
+<h2 id="TDD是什么"><a href="#TDD是什么" class="headerlink" title="TDD是什么"></a>TDD是什么</h2><p>tested dirven development,测试驱动开发</p>
+<h2 id="TDD的核心"><a href="#TDD的核心" class="headerlink" title="TDD的核心"></a>TDD的核心</h2><p>做好需求分析和设计，将==需求==拆解</p>
+<h2 id="为什么要测试，什么时候测试"><a href="#为什么要测试，什么时候测试" class="headerlink" title="为什么要测试，什么时候测试"></a>为什么要测试，什么时候测试</h2><p>因为错误不可避免，要排除错误减少损失<br>测试越早越好，因为错误绝大部分错误是在早期引入的，发现在中后期<br>错误造成的损失随着时间呈现指数级的增长，越早发现，成本越低。这是软件测试的作用</p>
+<p>测试驱动开发的作用：测试是根据需求来的，测试用例就是各个需求点，只要通过测试，模块的行为就能确保正确。在修改的时候做测试也能确保没有修改出错误。</p>
+<h2 id="测试的概念"><a href="#测试的概念" class="headerlink" title="测试的概念"></a>测试的概念</h2><p><strong>单元测试</strong>：用来对一个模块、一个函数或者一个类来进行正确性检验的测试工作。就是该部分能否正常工作</p>
+<p> <strong>测试用例</strong>：进行单元测试使用的例子</p>
+<p>单元测试不通过说明要么有bug，要么测试用例不正确</p>
+<p>测试正确说明，对该函数的修改没有对原来的行为造成影响。</p>
+<p>测试驱动，是测试的什么？<br>测试个模块的接口<br>检验是否满足规定的需求，找出与预期的差异</p>
+<h2 id="测试效果的指标"><a href="#测试效果的指标" class="headerlink" title="测试效果的指标"></a>测试效果的指标</h2><p>提高测试覆盖率，测试效率</p>
+<h2 id="测试的误区"><a href="#测试的误区" class="headerlink" title="测试的误区"></a>测试的误区</h2><p>盲目追求覆盖率</p>
+<h2 id="测试的工具"><a href="#测试的工具" class="headerlink" title="测试的工具"></a>测试的工具</h2><h3 id="mocha"><a href="#mocha" class="headerlink" title="mocha"></a>mocha</h3><p>mocha是JavaScript的一种单元测试框架，既可以在浏览器环境下运行，也可以在Node.js环境下运行。</p>
+<p>使用mocha，我们就只需要专注于编写单元测试本身，然后，让mocha去自动运行所有的测试，并给出测试结果。</p>
+<p>mocha的特点主要有：</p>
+<p>既可以测试简单的JavaScript函数，又可以测试异步代码，因为异步是JavaScript的特性之一；</p>
+<p>可以自动运行所有测试，也可以只运行特定的测试；</p>
+<p>可以支持before、after、beforeEach和afterEach来编写初始化代码。</p>
+<h4 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h4><p>包裹it们</p>
+<p>第一个参数是测试的名字</p>
+<p>第二个参数是一个函数，函数里是it</p>
+<h4 id="it"><a href="#it" class="headerlink" title="it"></a>it</h4><p>是各个测试用例</p>
+<p>第一个参数是测试用例的描述</p>
+<p>第二个参数是一个函数，函数体就是测试的内容，assert们</p>
+<h3 id="supertest"><a href="#supertest" class="headerlink" title="supertest"></a>supertest</h3><p>网络测试<br>构造请求，expect断言 判断回复</p>
+<h3 id="node自带断言库-assert"><a href="#node自带断言库-assert" class="headerlink" title="node自带断言库 assert"></a>node自带断言库 assert</h3><h2 id="如何写好测试"><a href="#如何写好测试" class="headerlink" title="如何写好测试"></a>如何写好测试</h2><p>所有人都假设TDD以后软件质量一定提高到最高境界了，但是测试代码也是代码，也有合理不合理的问题，也有价值与维护成本，不好的测试代码会降低效率<br>那么如何写好测试代码呢</p>
+<blockquote>
+<p>测试的核心是“可测试“，可测试意味着好的代码架构，写出可测试代码是优良测试的必要条件。</p>
+</blockquote>
+<blockquote>
+<p>测试驱动开发不是测试人员驱动。<br>这种开发方法完全是开发人员自行实施的，要点在于开发功能之前先开发该功能的测试程序，当然一开始测试程序的结果是失败的，然后去实现功能，让测试结果成功通过<br>测试驱动也不是测试驱动项目运转</p>
+</blockquote>
+<blockquote>
+<p>因为国内大多数程序员写的代码粒度太粗，无法测试。</p>
+</blockquote>
+<p>编写测试的原则是，一次只测一种情况，且测试代码要非常简单。</p>
+<h2 id="TDD和时间的关系"><a href="#TDD和时间的关系" class="headerlink" title="TDD和时间的关系"></a>TDD和时间的关系</h2><blockquote>
+<p>如果时间够，自然可以TDD。如果时间不够，有人可以tdd，测试先行，不代表真的要先写测试。tdd像一种工具或者流程，其背后有它自己的思维，掌握了思维，没有按流程出招，或许就表示tdd已死了吧。如果楼主是指形式或者招式，那么其在某些情况下还是继续存活的。比如时间足够，而程序员足够热爱它</p>
+</blockquote>
+<blockquote>
+<p>TDD只是一个概念，时间允许的话每个重要的方法业务都写单元测试，涉及正确性测试，边界测试，错误测试等等。之后代码有改动再跑单元测试就可以了。这样开发会节省挺多时间。</p>
+</blockquote>
+<p>和时间的关系，写测试要消耗时间<br>这是一个问题，很多公司的迭代周期比较短，比如半个月。那么如何搞TDD呢</p>
+<h2 id="TDD的好处"><a href="#TDD的好处" class="headerlink" title="TDD的好处"></a>TDD的好处</h2><blockquote>
+<p>TDD好处其实很简单：</p>
+<ol>
+<li>帮你整理需求</li>
+<li>帮你设计接口（空想的话很容易设计出屎）</li>
+<li>帮你做regression和给以后重构做准备</li>
+</ol>
+</blockquote>
+<p>提高程序健壮性</p>
+<blockquote>
+<p>TDD会鼓励你对现有代码，更频繁，更敏捷地进行改变<br>它带给你的是，更少的regression，更少的debuggingtime，以及更多的勇气来refactor</p>
+</blockquote>
+<blockquote>
+<p>是tdd重新让我编程的信心和乐趣。<br>我不爱用眼睛看检查运行结果，只要改动之后，一运行看到一长排的勾我就去冲杯香飘飘喝吧喝吧，喝了睡觉去了</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>过度测试是存在。但一些看似过度的testmethod确实揪出了bug。国内中小公司(没去过大公司，不知道啥情况)从上到下对测试总是抗拒的态度。他们会迷惑如何在需求变更中控制缺陷，却不愿试着作任何改变。整天鼓吹熬夜搬砖的人是没法沟通的:(。所以总是测试不够，而非过度</p>
+</blockquote>
+<p>要会单元测试，没有deadline的威胁，就是时间要足够<br>适合思路发散常常迷糊的人，让人有安全感，能确定想法落实了<br>可以灵活一些，比较高层的feature在确保接口可测试的前提下，没必要完全tdd。</p>
+<blockquote>
+<p>TDD是否已死先不说，很多程序员连写出基本的整洁代码都做不到，还能指望他先写测试吗？写代码绝对是个技术活，而不是体力活。所以，写代码需要不断修炼，比如code dojo, code kata 至于是否用TDD方式写代码，倒不一定。如果程序员的思维转变，写代码之前先考虑到测试用例、测试场景，也是一个很大的转变，即测试先行。</p>
+</blockquote>
+<blockquote>
+<p>我觉得TDD不火的原因是它对developer的素质要求非常高。新手看到TDD会欢欣鼓舞，但是他们没有能力来实践。老手们在项目的压力下，早就麻木了，先写case还不如写好代码再补case呢，很多东西我还没时间想清楚，怎么写case？不如先写个小功能先，边写边改，等稳定下来再补case. 所以对老手来说也需要不断练习，才能熟悉TDD.</p>
+</blockquote>
+<blockquote>
+<p>其实我们的目的是为了快速的交付有价值，有质量的产品或者服务，赢得公司的生存和发展空间。为了达到这个目的，我们有很多种的手段。但手段不是目的。<br>有很多盲目推崇TDD的所谓敏捷专家，其实是把手段当做目的，而忽略了问题的本质</p>
+</blockquote>
+<blockquote>
+<p>首先理清一个价值观问题，是方法论为生产力服务还是生产力为方法论服务<br>TDD的错误在于，他没有尊重程序员尊重开发实际，让非生产代码通知生产代码</p>
+</blockquote>
+<blockquote>
+<p>TDD 力量和问题都源自 test first。要能 test first，写代码之前要想得更清楚；代码得要有良好的可测试性，而为了可测试性要做一些不直接产生效益的工作；两者都既能推动思考，也能限制思考。TDD 是正确的思想：程序员要保证代码的正确性，和不完美的实践：程序员写测试。</p>
+</blockquote>
+<blockquote>
+<p>目前我们团队也在想办法推行TDD，但是不是标准的TDD，而仅仅是测试先行，并且不用mock这样做可以在实现业务代码之前对于自己的程序要实现什么有一个清晰的认识，而且写程序的过程也变成了“跑通我的单元测试”的过程，这样更加有目标和针对性，当你看到你写完的业务代码能跑通单元测试的时候，是否有种游戏过关的成就感呢？等到全员都逐渐适应这种测试先行的做法，再“得寸进尺”，多要求一点点。</p>
+</blockquote>
+<blockquote>
+<p>测试先行，怎么和开发做交互呢？什么时间调用开发的方法？<br>测试先行是说在实现业务逻辑前先写完单元测试，此时的单元测试肯定不通，之后再逐渐针对测试完善业务代码，最后跑通测试的时候业务代码也就完成了。不是让测试人员先测的意思</p>
+</blockquote>
+<blockquote>
+<p>TDD解决了：1）我要开始写代码了，我从哪开始。 搞个main，还是搞个test2）我不知道那个家伙的代码写的怎么样，以后会不会捅个篓子，要求他TDD好了。CodeReview的时候也轻松点。飞机上写几个小时代码，下来编译一遍过还没有bug的人。你跳出来说，他没有tdd，他LowB，那你是不是有毛病。总之一句话，各种方法论都是解决一个问题——人不行。</p>
+</blockquote>
+<blockquote>
+<p>软件开发说到底还是抽象和逻辑的艺术，TDD只是一种辅助开发手段，并不会减少因为开发人员素质不过硬或者工期短赶工而在开发过程中产生的抽象和逻辑问题。从来没听说过历史上哪位编程高手是因为什么方法论而练成的，人家是数据结构、算法、抽象和逻辑能力真的强大。对了，除了TDD，那什么敏捷、XP、结对、DDD等等，所有抛开实际抽象和逻辑问题的方法论，都是垃圾。</p>
+</blockquote>
+<p>更重要的是  基础的是  数据结构算法  抽象  逻辑能力</p>
+<blockquote>
+<p>TDD在什么情况下最有效？</p>
+<ol>
+<li>一个老系统，</li>
+<li>老系统有还不错的test case</li>
+<li>有很多相关系统依赖老系统</li>
+<li>老系统要推翻重做</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>先阐明观点，TDD没死，只是存活着在一些技术及配合要求比较高的团队，并且是挑业务的。我在互联网行业摸打滚爬了蛮久，历经各种项目，包括PC、游戏、云存储、电商等项目，TDD也是我这几年年一直在推动的事情，大部分失败了，也有些收获，这里大致把所了解以及个人见解说下。拿我所熟悉的互联网行业来说吧，其他传统软件行业经历时间太早，离当前较远，就不乱说了。现在互联网大都流行敏捷开发，其模式大家可自行度娘，但是真正做到的貌似没有，最少我没见过或者听过，很难用定性的词语来形容（语文不好），用个相似度来说吧，当前BAT公司排序为BTA（还是个人见解），用我个人的说法就是作坊式开发，忽略很多流程，只留下骨干的评审、开发、用例评审、转测、回归发布的流程。这个模式特点就是快，从需求提出到发布上线，一般都是一两周的时间，现有三周才能开发完成的业务。当然这里也有提出异议，说我太片面了，不过我说的大部分的互联网公司业务，保守估计60%的比例吧。解释完了互联网公司的开发模式，接下来我们回到TDD，至于TDD的概念，我就不科普了，自行度娘。其中TDD有一个特点非常明确，基本上可以作为是否做到的标签。这就是测试架构先于开发完成，并可对开发完成大部分模块进行测试（个人的理解，标准定义自行百度）。为了达到这个目的，我们搬出几个要素出来：时间、人、效果、方式。时间：什么时候完成，项目时间大约多久可以做TDD，TDD占项目时间大约多少比例合适。人：谁来做，一个人的项目我这里不谈，只谈多人协作项目，开发做还是测试来做？效果：要达成什么效果，以什么为合格的TDD的指标，功能覆盖？代码覆盖率？方式：要怎么做，开发一套自动化框架，还是用先协商接口用单测来完成，这里特别要提出的是，需要考虑后期维护的代价。</p>
+</blockquote>
+<blockquote>
+<p>TDD 推行的最大问题在于，大多数程序员还不会「写测试用例」和「重构」。<br>我认为推行TDD主要在两个方面努力，即意识和能力（好像任何事情都是这两方面哈）。意识方面主要是：认识到自己原有编程方法的不足；搞清楚TDD的价值所在，如何弥补原有方法的不足；心态开放，勇于尝试新鲜事物，不要浅尝辄止，要持续改进。意识和能力没有先后关系，而是在不断学习和实践过程中同时提高。在这篇文章中，我更想谈的是能力。我见到初接触TDD的人常犯下面的错误：在声明测试方法后，便开始写实现代码；写完“所有”的测试代码才开始写实现；一次实现过多的代码（超出当前测试覆盖的业务）；从不重构；测试实现细节而不是接口行为；TDD真是看起来容易，做起来难。</p>
+</blockquote>
+<pre><code>graph LR
+Red--&gt;Green
+Green--&gt;Refactor
+Refactor--&gt;Red
+</code></pre><blockquote>
+<p>上面这个图一目了然，但其实每一步都是对能力有要求的：红测试先行并不是说不需要思考，直接开始写代码。在开始写代码之前要进行需求分析，将需求分解为任务列表，再从列表中挑选一个任务，转换成一组测试用例，然后不断循环去实现。测试代码其实是产品代码的“用户”，在写测试代码时你就要考虑如何“使用”产品代码，是一个实例方法还是一个类方法，是从构造函数传参还是从方法调用传参，方法的命名，返回值等。这时其实我们就是在做设计，而且设计以代码来体现，比在脑袋中空想要更直观。很多人不懂“意图式编程”，总是习惯先实现一个东西，再去调用它。而测试先行就要求先使用，再实现。这样能少走很多弯路，减少返工。无法把测试前置的原因往往在于，测试的是「实现」，也就是你写的是「白盒」测试。这样的测试根本没有价值，重构的时候会成为维护负担。而好的做法是测试「做什么」，而不是「怎么做」。绿以最快的速度让测试变绿，意味着我们通常用最直接但可能并不优雅的方式，比如复制代码。然后小步重构，直到符合简单设计的原则：通过所有测试每个概念都被清楚地表达没有重复没有多余的东西难的是要让实现刚好满足当前的测试，不做过度的设计，不写多余的代码。因为如果你写多了，除了引入复杂性以外，多的那部分就没有测试能覆盖到。或者你后面的测试写出来就能直接变绿，你就没办法按TDD的节奏进行下去了。重构首先要能识别坏味道，一些低级的Smell，很容易识别，比如：Magic Number，重复代码，太大的类，太长的方法，命名等。但更高级的如Feature Envy，Lazy Class等就比较难以识别。只要识别到Smell，知道用什么手法去重构，剩下的就比较简单了，现代的IDE，尤其是JetBrains的产品，对重构的支持非常强大，几乎都可以用快捷键完成。选对工具非常重要，善假于物能极大提高开发效率。但也不能过分依赖工具，要明白每一个手法背后的原理。所以推荐每个想要实践TDD的开发者，一定要先读《重构》。最后我想说：TDD不是银弹，不可能适合所有的场景，但这不应该成为我们拒绝它的理由。也不要轻易否定TDD，如果要否定，起码要在认真实践过之后。</p>
+</blockquote>
+<h1 id="TDD教程"><a href="#TDD教程" class="headerlink" title="TDD教程"></a>TDD教程</h1><p>总览</p>
+<p>TDD的理解和讲解</p>
+<p>基线描述</p>
+<p>能够讲出来科学的TDD步骤，和TDD的三个主要的状态<br>掌握mock技巧，能够讲出几种mock的场景<br>了解SetUp的作用<br>会写TestCase<br>给出题目可以驱动着写出来<br>细节如下：</p>
+<p>能够讲出来科学的TDD步骤，和TDD的三个主要的状态</p>
+<p>正确的TDD的步骤至少包含下面的几个点，写一个TestCase，运行，得到期望的失败，写实现，重构</p>
 
         
     
@@ -626,7 +755,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">7</span></a>
             </ul>
         </li>
         
