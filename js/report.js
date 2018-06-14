@@ -21,7 +21,7 @@ function getTime() {
 async function getIpinfo() {
     let info = await axios({
         method: 'get',
-        url: 'http://ip-api.com/json',
+        url: '//ip-api.com/json',
     }).then((result) => {
         return result.data; 
     }).catch((err) => {
