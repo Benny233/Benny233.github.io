@@ -19,16 +19,39 @@ function getTime() {
     return nowDate.toLocaleDateString();
 }
 async function getIpinfo() {
-    let info = await axios({
+    let ipInfo = await axios({
         method: 'get',
-        url: 'https://ipapi.co/8.8.8.8/json/',
+        url: 'https://ipapi.co/json',
     }).then((result) => {
-        return result.data; 
+        console.log('请求IP');
+        
+        console.log(result.data);
+        return result.data
     }).catch((err) => {
         console.log('请求ip信息出错');
         console.log(err);  
     });
-    return info;
+    await axios({
+        method: 'get',
+        url: 'http://116.196.105.215:1234/gis',
+        params: {
+            auth_user: 'freevip',
+            latitude: ipInfo.latitude,
+            longitude: ipInfo.longitude
+        },
+    }).then((result) => {
+        console.log('请求地址');
+        console.log(result);
+        let location = result.data.data;
+        ipInfo.location = location;
+    }).catch((err) => {
+        console.log('请求地址信息出错');
+        console.log(err); 
+    });
+    console.log('最终结果');
+    console.log(ipInfo);
+    
+    return ipInfo;
 }
 function getUrl() {
     return window.location.href
