@@ -1,7 +1,7 @@
 window.addEventListener("load", function (event) {
     let urlObj = {
         method: 'get',
-        url: 'localhost:3888',
+        url: 'localhost:8080/ding',
         params: {
             time: getTime(),
             ipinfo: getIpinfo(),
