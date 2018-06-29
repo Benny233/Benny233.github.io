@@ -3,6 +3,36 @@
   
     
     <entry>
+      <title>Makefile笔记</title>
+      <link href="/2018/06/29/makefile%E7%AC%94%E8%AE%B0/"/>
+      <url>/2018/06/29/makefile%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>根据指定的Shell命令进行构建的工具</p><p><a href="http://www.ruanyifeng.com/blog/2015/02/make.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2015/02/make.html</a></p><pre><code class="makefile">pjName := wordpress# 变量docker:    docker run \        --name ${pjName} \# 容器名        --rm \# 停止运行后自动删除当前容器        -ti \# t for terminal,i for interact        -v $$(pwd):/var/www/html \# 映射当前目录到容器指定目录        -p 3000:3000 \# 映射端口到容器端口        mooxe/node \        /bin/bash# 额外加一个命令，只能加一个# 这是运行bash shell</code></pre>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>docker笔记</title>
+      <link href="/2018/06/29/docker%E7%AC%94%E8%AE%B0/"/>
+      <url>/2018/06/29/docker%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>可以粗糙的理解为轻量级的虚拟机，把程序放在单独的环境中运行</p><p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p><h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h2><p> 获取image</p><h2 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h2><p> 创建image</p><h2 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h2><p> 列出image</p><h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><p> 运行container，跑一个项目</p><pre><code class="shell">docker run -t -i -p 19001:19001 -p 19011:19011 imagesname</code></pre><ol><li>-t 分配一个tty</li><li>-i 开发输入</li><li><p>-p </p><h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h2><p>列出container，项目们<br>-a</p><p>列出隐藏的</p><h2 id="docker-rm"><a href="#docker-rm" class="headerlink" title="docker rm"></a>docker rm</h2><p>删除container</p></li></ol><h2 id="docker-rmi"><a href="#docker-rmi" class="headerlink" title="docker rmi"></a>docker rmi</h2><p> 删除image</p><h2 id="docker-cp"><a href="#docker-cp" class="headerlink" title="docker cp"></a>docker cp</h2><p> 在host和container之间拷贝文件</p><h2 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a>docker commit</h2><p> 保存改动为新的image<br><a href="http://www.simapple.com/docker-commandline" target="_blank" rel="noopener">http://www.simapple.com/docker-commandline</a></p><h1 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h1><p><a href="http://www.simapple.com/docker-dockerfile" target="_blank" rel="noopener">http://www.simapple.com/docker-dockerfile</a><br>通过编写简单的文件创建docker镜像</p><p>FROM: base image</p><p>RUN: 执行命令</p><p>ADD： 添加文件</p><p>COPY： 拷贝文件</p><p>CMD： 执行命令，打包完成之后</p><p>EXPOSE： 暴露端口</p><p>WORKDIR： 指定路径</p><p>MAINTAINER: 维护者</p><p>ENV: 设定环境变量</p><p>ENTRYPOINT: 容器入口</p><p>USER: 指定用户</p><p>VOLUME: mount point</p><pre><code class="shell">touch Dockerfiledocker build -t hello_docker .使用.目录下的dockerfile文件创建一个叫做hello_docker的镜像，</code></pre><h1 id="使用docker步骤"><a href="#使用docker步骤" class="headerlink" title="使用docker步骤"></a>使用docker步骤</h1>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>区块链基础知识</title>
       <link href="/2018/06/29/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
       <url>/2018/06/29/%E5%8C%BA%E5%9D%97%E9%93%BE/</url>
@@ -246,16 +276,16 @@
   
     
     <entry>
-      <title>gallery</title>
-      <link href="/gallery/index.html"/>
-      <url>/gallery/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>gallery</title>
+      <link href="/gallery/index.html"/>
+      <url>/gallery/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
