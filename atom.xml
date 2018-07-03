@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-01T05:22:25.000Z</updated>
+  <updated>2018-07-03T05:10:53.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>非暴力沟通</title>
+    <link href="http://yoursite.com/2018/07/03/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/"/>
+    <id>http://yoursite.com/2018/07/03/非暴力沟通/</id>
+    <published>2018-07-03T05:10:00.000Z</published>
+    <updated>2018-07-03T05:10:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="核心观点"><a href="#核心观点" class="headerlink" title="核心观点"></a>核心观点</h1><p>沟通的目的：不是为了改变他人符合我们的利益，而是诚实基础上，获知双方的需要达成匹配</p><p>暴力行为的背后，往往隐藏着人性本恶的价值取向。接受人性本善的价值取向，暴力因素就会远离。</p><h1 id="交流如何变成暴力行为"><a href="#交流如何变成暴力行为" class="headerlink" title="交流如何变成暴力行为"></a>交流如何变成暴力行为</h1><h3 id="道德批判"><a href="#道德批判" class="headerlink" title="道德批判"></a>道德批判</h3><p>用自己的价值观给别人贴标签。这种标签实际上反应了我们的需要和价值观。贴完标签，偏见就产生了，偏见会阻碍交流。</p><h3 id="进行比较"><a href="#进行比较" class="headerlink" title="进行比较"></a>进行比较</h3><p>比较也是一种评判。强迫别人参加一场比赛，然后判他输。</p><h3 id="回避责任"><a href="#回避责任" class="headerlink" title="回避责任"></a>回避责任</h3><p>这是一种表达方式的问题。“不得不做”是一种回避责任的表达方式，需要换成负责任的方式。</p><h3 id="强人所难"><a href="#强人所难" class="headerlink" title="强人所难"></a>强人所难</h3><p>字面意思。对别人的要求往往暗含威胁。</p><h1 id="暴力行为的背后"><a href="#暴力行为的背后" class="headerlink" title="暴力行为的背后"></a>暴力行为的背后</h1><p>行为只是表面原因，问题的根源是对自己和世界的看法。比如优胜劣汰，人性本恶。</p><p>优胜劣汰在社会运作的规则之一，但我们的生活不是。在社会中我们不得不去竞争，比输了很正常，要能够接受。尽人事，听天命，实在是智慧之言。很多情况下，让我懊恼的失败都是没有“尽人事”。</p><p>这个世界好人有很多，坏人也不少，好人可能也做过坏事，坏人大概率也不是彻头彻尾的坏。沟通的时候应该采用“无罪推定”原则，重大利益面前还是“有罪推定”吧。小亏吃了也没啥，大亏万万不能吃。有些场景本来就是暴力的战争，非暴力适用的场景是沟通。</p><h1 id="非暴力沟通要素"><a href="#非暴力沟通要素" class="headerlink" title="非暴力沟通要素"></a>非暴力沟通要素</h1><p>技能是需要练习的，沟通这项技能有四个要素，<strong>观察</strong>、<strong>感受</strong>、<strong>需要</strong>和 <strong>请求</strong>。通过四要素的逻辑来组织语言，语言结构就不再是随意的、任性的甚至是暴力的，而是一种平等的、尊重的语言。</p><p>比如，你给我一份重要文件，中午出去吃饭我把他放在桌子上了，没有收起来。你看见了然后生气的说：“我给你这么重要的文件，你怎么随便扔在桌子上？”</p><p>用非暴力沟通的方式来组织语言就是这样的：</p><ol><li>观察：我看到你把文件放在桌子上</li><li>感受：我郑重交给你的重要文件，你却随意仍在桌子上，我感到失望</li><li>需要：保管好文件，尊重我的嘱咐</li><li>请求：保管好文件</li></ol><p>经过组织后的语言是这样的：我看见刚才交给你的重要文件没有放在桌子上没有收起来(观察)，我担心不安全(感受)，重要的文件应该妥善保管(需要、请求)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;核心观点&quot;&gt;&lt;a href=&quot;#核心观点&quot; class=&quot;headerlink&quot; title=&quot;核心观点&quot;&gt;&lt;/a&gt;核心观点&lt;/h1&gt;&lt;p&gt;沟通的目的：不是为了改变他人符合我们的利益，而是诚实基础上，获知双方的需要达成匹配&lt;/p&gt;
+&lt;p&gt;暴力行为的背后，往往隐藏着
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Fabric基础笔记</title>
@@ -472,30 +496,6 @@ TDD:定义接口测试接口--&amp;gt;提交PR并讨论
       
         &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h1&gt;&lt;p&gt;拿到小房东手里的房源信息&lt;/p&gt;
 &lt;h1 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目
-      
-    
-    </summary>
-    
-      <category term="产品" scheme="http://yoursite.com/categories/%E4%BA%A7%E5%93%81/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>用研笔记</title>
-    <link href="http://yoursite.com/2017/12/21/%E7%94%A8%E7%A0%94%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/12/21/用研笔记/</id>
-    <published>2017-12-21T10:53:06.000Z</published>
-    <updated>2018-06-14T02:55:47.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="用户研究概述"><a href="#用户研究概述" class="headerlink" title="用户研究概述"></a>用户研究概述</h1><p>==用户研究员的能力==，技术技能和非技术技能</p><h2 id="技术技能"><a href="#技术技能" class="headerlink" title="技术技能"></a>技术技能</h2><ol><li>用户研究能力</li><li>人机交互能力</li><li>产品分析能力</li></ol><h3 id="一，用户研究能力"><a href="#一，用户研究能力" class="headerlink" title="一，用户研究能力"></a>一，用户研究能力</h3><p>针对产品开发的不同阶段，能够灵活运用各种调研方法，权衡利弊，制定适合的用户研究方案</p><p>能够输出高质量的用户调研报告，为产品设计提出合理化建议</p><p>用户研究能力包括：</p><ol><li>定量分析能力</li><li>定性分析能力</li></ol><h4 id="定量分析能力："><a href="#定量分析能力：" class="headerlink" title="定量分析能力："></a>定量分析能力：</h4><ol><li>数据的敏感度</li><li>数据分析能力</li><li>可熟练使用各类定量研究方法</li><li>掌握各类定量研究方法的应用场景及优缺点</li><li>独立完成分析的能力</li></ol><h4 id="定性分析能力："><a href="#定性分析能力：" class="headerlink" title="定性分析能力："></a>定性分析能力：</h4><ol><li>对常见定性研究方法，可熟练使用</li><li>对各个研究方法有自己的心得体会，掌握技巧</li><li>掌握各类定性研究方法的应用场景及优缺点</li><li>独立执行研究的能力</li></ol><h3 id="二，人机交互能力"><a href="#二，人机交互能力" class="headerlink" title="二，人机交互能力"></a>二，人机交互能力</h3><ol><li>熟练掌握人机交互的理论知识</li><li>熟悉掌握各终端设计规范</li><li>有良好的用户体验意识</li><li>可通过用户研究，发现产品设计中的不足，并能提供设计改善建议</li></ol><h3 id="三，产品分析能力"><a href="#三，产品分析能力" class="headerlink" title="三，产品分析能力"></a>三，产品分析能力</h3><ol><li>对所应聘行业非常了解，有充分准备</li><li>对所应聘行业的竞品非常熟悉</li><li>对所应聘部门的产品非常熟悉，并有自己的见解</li><li>有良好的产品感</li><li>热爱互联网产品，对于新兴产品有好奇心，保持对互联网产品的关注和体验</li></ol><h2 id="非技术技能"><a href="#非技术技能" class="headerlink" title="非技术技能"></a>非技术技能</h2><ol><li>沟通技巧</li><li>好奇心</li><li>学习能力</li><li>敏锐力</li></ol><h1 id="用户研究方法论"><a href="#用户研究方法论" class="headerlink" title="用户研究方法论"></a>用户研究方法论</h1><p>工作中会用到的知识与技能</p><h3 id="一，基本研究方法"><a href="#一，基本研究方法" class="headerlink" title="一，基本研究方法"></a>一，基本研究方法</h3><ol><li>研究设计，采集工具</li><li>数据的获取：外部数据，内部数据</li></ol><h3 id="二，统计学知识"><a href="#二，统计学知识" class="headerlink" title="二，统计学知识"></a>二，统计学知识</h3><ol><li>基础统计方法</li><li>高级统计学方法</li><li>数据挖掘（了解，可拓展学习）</li></ol><h4 id="基础统计分析"><a href="#基础统计分析" class="headerlink" title="基础统计分析"></a>基础统计分析</h4><h5 id="主要方法"><a href="#主要方法" class="headerlink" title="主要方法"></a>主要方法</h5><ol><li>集中趋势</li><li>离散趋势</li><li>分布特征</li><li>推论统计</li><li>相关分析</li></ol><h5 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h5><ol><li>日常数据的初步加工分析</li><li>简单分析变量间关系</li><li>需要快速输出结果</li><li>进行简单分析</li></ol><h5 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h5><p>用研岗要求掌握，相关岗位建议掌握</p><h4 id="高级统计方法"><a href="#高级统计方法" class="headerlink" title="高级统计方法"></a>高级统计方法</h4><h5 id="主要方法-1"><a href="#主要方法-1" class="headerlink" title="主要方法"></a>主要方法</h5><ol><li>聚类</li><li>回归</li><li>主成分</li><li>因子分析</li><li>判别分析</li><li>对应分析</li><li>多维尺度分析</li><li>生存分析</li><li>路径分析</li><li>结构方程</li></ol><h5 id="适用场景-1"><a href="#适用场景-1" class="headerlink" title="适用场景"></a>适用场景</h5><ol><li>对数据进行深挖掘和分析</li><li>分析变量间的关系</li><li>趋势预测，用户细分等</li></ol><h5 id="要求-1"><a href="#要求-1" class="headerlink" title="要求"></a>要求</h5><p>用研岗要求掌握，相关岗位了解</p><h4 id="数据挖掘方法"><a href="#数据挖掘方法" class="headerlink" title="数据挖掘方法"></a>数据挖掘方法</h4><h5 id="主要方法-2"><a href="#主要方法-2" class="headerlink" title="主要方法"></a>主要方法</h5><ol><li>神经网络</li><li>决策树</li></ol><h5 id="适用场景-2"><a href="#适用场景-2" class="headerlink" title="适用场景"></a>适用场景</h5><ol><li>可实现实时，自动化分析</li><li>具备自适应和自学习性</li></ol><h5 id="要求-2"><a href="#要求-2" class="headerlink" title="要求"></a>要求</h5><p>拓展学习</p><h3 id="三，数据分析思路及框架"><a href="#三，数据分析思路及框架" class="headerlink" title="三，数据分析思路及框架"></a>三，数据分析思路及框架</h3><ol><li>常用的分析框架</li><li>基于理论的分析模型</li></ol><p>比如：</p><ol><li>宏观的行业分析框架</li><li>微观的分析用户需求</li><li>用户满意度</li><li>品牌认知</li><li>转化</li><li>留存的分析框架</li></ol><h3 id="四，分析工具及软件"><a href="#四，分析工具及软件" class="headerlink" title="四，分析工具及软件"></a>四，分析工具及软件</h3><ol><li>Excel</li><li>SPSS，专业数据分析软件，比Excel高阶</li><li>SPSS modeler， R语言， Amos（拓展学习），LISREL，Python</li></ol><h3 id="五，图表制作"><a href="#五，图表制作" class="headerlink" title="五，图表制作"></a>五，图表制作</h3><ol><li>基本图表制作</li><li>数据可视化</li></ol><h3 id="六，报告撰写及演示"><a href="#六，报告撰写及演示" class="headerlink" title="六，报告撰写及演示"></a>六，报告撰写及演示</h3><ol><li>PPT制作，演讲能力</li></ol><h3 id="七，行业及业务领域知识"><a href="#七，行业及业务领域知识" class="headerlink" title="七，行业及业务领域知识"></a>七，行业及业务领域知识</h3><h4 id="行业领域知识"><a href="#行业领域知识" class="headerlink" title="行业领域知识"></a>行业领域知识</h4><p>互联网，垂直细分行业知识</p><h4 id="业务相关知识"><a href="#业务相关知识" class="headerlink" title="业务相关知识"></a>业务相关知识</h4><ol><li>产品经理</li><li>设计</li><li>运营</li><li>市场营销相关知识</li></ol><h4 id="专业知识"><a href="#专业知识" class="headerlink" title="专业知识"></a>专业知识</h4><ol><li>用户体验</li><li>经济学</li><li>心理学</li><li>社会学</li><li>市场营销等</li></ol><h3 id="八，数据洞察和落地"><a href="#八，数据洞察和落地" class="headerlink" title="八，数据洞察和落地"></a>八，数据洞察和落地</h3><ol><li>通过数据给出有用的建议</li><li>落地跟进</li></ol><h1 id="用户定位与需求分析"><a href="#用户定位与需求分析" class="headerlink" title="用户定位与需求分析"></a>用户定位与需求分析</h1><h2 id="用户研究的‘用户’是谁？"><a href="#用户研究的‘用户’是谁？" class="headerlink" title="用户研究的‘用户’是谁？"></a>用户研究的‘用户’是谁？</h2><h3 id="用户的定义"><a href="#用户的定义" class="headerlink" title="用户的定义"></a>用户的定义</h3><p>狭义的用户：产品的使用者</p><p>广义的用户还有业务方</p><p>用户研究的意义</p><pre><code>graph TDa((业务方-所服务产品))--&gt;b((用户研究-桥梁))b--&gt;c((用户方-产品的目标用户))</code></pre><p>不是简单的将用户的需求告诉业务方，而是要考虑业务方为什么要提供这个产品/功能</p><p>业务方也是有需求的</p><p>了解双方的需求</p><h1 id="测试评估提升用户体验"><a href="#测试评估提升用户体验" class="headerlink" title="测试评估提升用户体验"></a>测试评估提升用户体验</h1><h3 id="用户体验优化设计"><a href="#用户体验优化设计" class="headerlink" title="用户体验优化设计"></a>用户体验优化设计</h3><p>目的&amp;内容：使产品更好用易用，产生更大的用户价值</p><h3 id="生命是数据分析"><a href="#生命是数据分析" class="headerlink" title="生命是数据分析"></a>生命是数据分析</h3><h3 id="案例分析：数据分析如何驱动体验优化"><a href="#案例分析：数据分析如何驱动体验优化" class="headerlink" title="案例分析：数据分析如何驱动体验优化"></a>案例分析：数据分析如何驱动体验优化</h3><h1 id="用户分群与追踪研究"><a href="#用户分群与追踪研究" class="headerlink" title="==用户分群与追踪研究=="></a>==用户分群与追踪研究==</h1><p>用户行为来自于用户动机（目标）</p><p>用户使用我们的产品（用户行为）产生用户态度</p><p>当前时间点下的用户情况</p><h2 id="用户画像例子，考霸族"><a href="#用户画像例子，考霸族" class="headerlink" title="用户画像例子，考霸族"></a>用户画像例子，考霸族</h2><h3 id="简单描述"><a href="#简单描述" class="headerlink" title="简单描述"></a>简单描述</h3><ol><li>人生阶段：毕业生</li><li>自驱力：强</li></ol><h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><p>姓名，职业，年龄，家庭状况，互联网使用习惯</p><h3 id="个性特征"><a href="#个性特征" class="headerlink" title="个性特征"></a>个性特征</h3><h3 id="学习目的"><a href="#学习目的" class="headerlink" title="学习目的"></a>学习目的</h3><h3 id="学习习惯"><a href="#学习习惯" class="headerlink" title="学习习惯"></a>学习习惯</h3><h3 id="付费经历及态度"><a href="#付费经历及态度" class="headerlink" title="付费经历及态度"></a>付费经历及态度</h3><h2 id="用户画像方法简介"><a href="#用户画像方法简介" class="headerlink" title="用户画像方法简介"></a>用户画像方法简介</h2><ol><li>定性用户画像，简单快速</li><li>定量用户画像</li><li>方法选择的原则</li></ol><h3 id="选择定性还是定量"><a href="#选择定性还是定量" class="headerlink" title="选择定性还是定量"></a>选择定性还是定量</h3><p>取决于</p><ol><li>用户画像的受众是谁？设计师?产品经理？</li><li>希望用户画像结果来支持什么类型的决定</li><li>打算花多少时间和钱</li></ol><h2 id="用户画像的特点"><a href="#用户画像的特点" class="headerlink" title="用户画像的特点"></a>用户画像的特点</h2><ol><li>越早越好，方向准确比行动重要</li><li>任何阶段都可以，任何阶段都有用，迟到比旷工好</li><li>不断迭代更新，用户会变化</li></ol><h1 id="从用户研究到商业分析"><a href="#从用户研究到商业分析" class="headerlink" title="从用户研究到商业分析"></a>从用户研究到商业分析</h1><p>用户研究为什么要学习商业分析</p><h3 id="产品人要具有大局观"><a href="#产品人要具有大局观" class="headerlink" title="产品人要具有大局观"></a>产品人要具有大局观</h3><p>理解用户只是基础，最终的目的都是创造商业价值，所以要懂商业分析</p><h3 id="商业与用户价值的平衡"><a href="#商业与用户价值的平衡" class="headerlink" title="商业与用户价值的平衡"></a>商业与用户价值的平衡</h3><p>豆瓣：过于重视用户体验而轻视商业发展</p><p>百度：过于重视商业发展而忽视用户体验</p><p>微信：取得用户体验和商业价值的平衡</p><p>在==正确的时机==找到产品在==商业价值和用户体验间的平衡点==至关重要</p><p>商业价值和用户价值的平衡就是</p><p>产品诉求和用户诉求的平衡</p><p>一名成功的用户研究员，需要研究和考量外部市场因素，驱动产品在商业价值和用户体验中取得平衡点</p><h3 id="创业公司中人员配置的不完备"><a href="#创业公司中人员配置的不完备" class="headerlink" title="创业公司中人员配置的不完备"></a>创业公司中人员配置的不完备</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;用户研究概述&quot;&gt;&lt;a href=&quot;#用户研究概述&quot; class=&quot;headerlink&quot; title=&quot;用户研究概述&quot;&gt;&lt;/a&gt;用户研究概述&lt;/h1&gt;&lt;p&gt;==用户研究员的能力==，技术技能和非技术技能&lt;/p&gt;
-&lt;h2 id=&quot;技术技能&quot;&gt;&lt;a href=&quot;#技术
       
     
     </summary>
