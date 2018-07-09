@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-03T05:10:53.000Z</updated>
+  <updated>2018-07-09T15:40:19.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>部署流程</title>
+    <link href="http://yoursite.com/2018/07/09/%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/07/09/部署流程/</id>
+    <published>2018-07-09T15:39:07.000Z</published>
+    <updated>2018-07-09T15:40:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>项目写好了。有一台服务器。</p><h1 id="服务器基本配置"><a href="#服务器基本配置" class="headerlink" title="服务器基本配置"></a>服务器基本配置</h1><h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><pre><code class="shell">ssh username@ip</code></pre><p>这是是root用户，权限太大不安全。</p><h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><pre><code class="shell">新建用户 adduser name 给sudo权限 vim /etc/sudoers在root ALL=(ALL)ALL这一行下增加name ALL=(ALL)ALL</code></pre><h3 id="简化登录"><a href="#简化登录" class="headerlink" title="简化登录"></a>简化登录</h3><p>本机.zshrc文件给命令配置别名</p><pre><code>alias tx=&quot;ssh name@ip&quot;</code></pre><h3 id="无密码登录"><a href="#无密码登录" class="headerlink" title="无密码登录"></a>无密码登录</h3><p>和git仓库配置秘钥原理一样。</p><pre><code>1. 两边都要有生成秘钥ssh-keygen -t rsa -C “email”2. 服务器保存本地公钥echo pubkey &gt;&gt; .ssh/authorized_keys3. 重启服务器sshservice ssh restart</code></pre><h3 id="安全措施"><a href="#安全措施" class="headerlink" title="安全措施"></a>安全措施</h3><pre><code>1. 修改端口文件/etc/ssh/sshd_config port属性,换成其他端口2. 关闭root密码登录PermitRootLogin属性，换成without-password3. 重启ssh4. 还可以配置iptables</code></pre><h3 id="nginx配置端口代理"><a href="#nginx配置端口代理" class="headerlink" title="nginx配置端口代理"></a>nginx配置端口代理</h3><p>在/etc/nginx/nginx.conf中添加</p><pre><code class="sh"># 让nginx加载配置文件include /etc/nginx/conf.d/*.conf;</code></pre><p>然后在/etc/nginx/conf.d文件夹下新建配置文件name-port.conf</p><pre><code class="sh">upstream dappdemo {    server localhost:3000;}server {    listen 80;    server_name 127.0.0.1;    location / {        proxy_set_header X-Real-IP $remote_addr;        proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;        proxy_set_header Host $http_host;        proxy_set_header X-Nginx-Proxy true;        proxy_pass http://dappdemo;        proxy_redirect off;    }}</code></pre><p>匹配到server_name的流量转发到proxy_pass</p><h1 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h1><h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><pre><code>1. 安装dockerwget -qO- https://get.docker.com/ | sh2. 检验docker是否被正确安装sudo docker run hello-world</code></pre><h3 id="从仓库拉取代码"><a href="#从仓库拉取代码" class="headerlink" title="从仓库拉取代码"></a>从仓库拉取代码</h3><ol><li>服务器连接仓库<br><a href="https://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html" target="_blank" rel="noopener">教程</a></li><li>git clone</li></ol><h3 id="生成镜像"><a href="#生成镜像" class="headerlink" title="生成镜像"></a>生成镜像</h3><p>根据dockerfile新建一个镜像</p><pre><code>docker build -t yourname/imagename:tag .docker build -t benny/dapp:latest .</code></pre><h3 id="新建容器并启动"><a href="#新建容器并启动" class="headerlink" title="新建容器并启动"></a>新建容器并启动</h3><p>用了Makefile</p><pre><code class="sh">pjName := dappdemodocker:    docker run \        --name ${pjName} \        --rm \        -ti \        -p 3000:3000 \        benny/dapp:0.1 \        /bin/bash</code></pre><pre><code>make docker</code></pre><h3 id="启动应用"><a href="#启动应用" class="headerlink" title="启动应用"></a>启动应用</h3><p>npm run start，使用pm2管理进程</p><pre><code>pm2 start pm2.json==================================={  &quot;apps&quot;: [    {      &quot;name&quot;: &quot;ico-dapp&quot;,      &quot;script&quot;: &quot;./server.js&quot;,      &quot;out_file&quot;: &quot;./logs/out.log&quot;,      &quot;error_file&quot;: &quot;./logs/error.log&quot;,      &quot;log_date_format&quot;: &quot;YYYY-MM-DD HH:mm:ss&quot;,      &quot;instances&quot;: 0,      &quot;exec_mode&quot;: &quot;cluster&quot;,      &quot;max_memory_restart&quot;: &quot;500M&quot;,      &quot;merge_logs&quot;: true,      &quot;env&quot;: {        &quot;NODE_ENV&quot;: &quot;production&quot;      }    }  ]}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;项目写好了。有一台服务器。&lt;/p&gt;
+&lt;h1 id=&quot;服务器基本配置&quot;&gt;&lt;a href=&quot;#服务器基本配置&quot; class=&quot;headerlink&quot; title=&quot;服务器基本配置&quot;&gt;&lt;/a&gt;服务器基本配置&lt;/h1&gt;&lt;h3 id=&quot;登录&quot;&gt;&lt;a href=&quot;#登录&quot; class=
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx笔记</title>
+    <link href="http://yoursite.com/2018/07/09/Nginx%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/07/09/Nginx笔记/</id>
+    <published>2018-07-09T14:44:54.000Z</published>
+    <updated>2018-07-09T14:45:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>nginx是web服务器，性能高，并发性好。</p><p>可以用作代理服务器。</p><p>正向：直接转发</p><p>反向：分发请求</p><h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>nginx -s reload 重新加载</p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><h3 id="这和用程序起一个服务有什么区别呢？"><a href="#这和用程序起一个服务有什么区别呢？" class="headerlink" title="这和用程序起一个服务有什么区别呢？"></a>这和用程序起一个服务有什么区别呢？</h3><p>语言自带类库实现的服务器比较简单。nginx是专业的，更强大。</p><p>为了方便，应用服务器往往也会集成 HTTP Server 的功能，但是不如专业的 HTTP Server 那么强大，所以应用服务器往往是运行在 HTTP Server 的背后，执行应用，将动态的内容转化为静态的内容之后，通过 HTTP Server 分发到客户端。</p><h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><h3 id="动静态资源分离"><a href="#动静态资源分离" class="headerlink" title="动静态资源分离"></a>动静态资源分离</h3><p>运用Nginx的反向代理功能分发请求：所有动态资源的请求交给Tomcat，而静态资源的请求（例如图片、视频、CSS、JavaScript文件等）则直接由Nginx返回到浏览器，这样能大大减轻Tomcat的压力。</p><h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>当业务压力增大时，可能一个Tomcat的实例不足以处理，那么这时可以启动多个Tomcat实例进行水平扩展，而Nginx的负载均衡功能可以把请求通过算法分发到各个不同的实例进行处理</p><h1 id="实现打点计数"><a href="#实现打点计数" class="headerlink" title="实现打点计数"></a>实现打点计数</h1><p>用到了服务器功能，和日志功能。</p><p>服务器只返回一个像素的gif图，很高效。</p><p>日志路径为”/usr/local/Cellar/nginx/1.15.0/logs”</p><p>nginx.conf </p><pre><code>server {    location = /report {        empty_gif;    }}</code></pre><h1 id="实现负载均衡和端口代理"><a href="#实现负载均衡和端口代理" class="headerlink" title="实现负载均衡和端口代理"></a>实现负载均衡和端口代理</h1><p>nginx运行在80端口，将请求分发到对应的端口上</p><p>/etc/nginx/conf.d/name-port.conf</p><p>把入口的流量转发到dappdemo</p><pre><code class="sh">upstream dappdemo {    server 127.0.0.1:3000;#    down  表示单前的 server 暂时不参与负载     server 127.0.0.1:8083 down;#   weight  默认为 1 weight 越大，负载的权重就越大。     server 127.0.0.1:8084 weight=3;   #    backup 其它所有的非 backup 机器 down 或者忙的时候，请求 backup机器。所以这台机器压力会最轻    server 127.0.0.1:8002 backup;   }server {    listen 8080;#    匹配的入口    server_name 127.0.0.1;    location / {        proxy_set_header X-Real-IP $remote_addr;        proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;        proxy_set_header Host $http_host;        proxy_set_header X-Nginx-Proxy true;        proxy_pass http://dappdemo;        proxy_redirect off;    }}</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h1&gt;&lt;p&gt;nginx是web服务器，性能高，并发性好。&lt;/p&gt;
+&lt;p&gt;可以用作代理服务器。&lt;/p&gt;
+&lt;p&gt;正向：直接转发&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>非暴力沟通</title>
@@ -112,13 +162,13 @@
   </entry>
   
   <entry>
-    <title>docker笔记</title>
-    <link href="http://yoursite.com/2018/06/29/docker%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/06/29/docker笔记/</id>
+    <title>Docker笔记</title>
+    <link href="http://yoursite.com/2018/06/29/Docker%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/06/29/Docker笔记/</id>
     <published>2018-06-29T13:42:43.000Z</published>
-    <updated>2018-06-29T13:43:21.000Z</updated>
+    <updated>2018-07-09T15:39:43.000Z</updated>
     
-    <content type="html"><![CDATA[<p>可以粗糙的理解为轻量级的虚拟机，把程序放在单独的环境中运行</p><p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p><h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h2><p> 获取image</p><h2 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h2><p> 创建image</p><h2 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h2><p> 列出image</p><h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><p> 运行container，跑一个项目</p><pre><code class="shell">docker run -t -i -p 19001:19001 -p 19011:19011 imagesname</code></pre><ol><li>-t 分配一个tty</li><li>-i 开发输入</li><li><p>-p </p><h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h2><p>列出container，项目们<br>-a</p><p>列出隐藏的</p><h2 id="docker-rm"><a href="#docker-rm" class="headerlink" title="docker rm"></a>docker rm</h2><p>删除container</p></li></ol><h2 id="docker-rmi"><a href="#docker-rmi" class="headerlink" title="docker rmi"></a>docker rmi</h2><p> 删除image</p><h2 id="docker-cp"><a href="#docker-cp" class="headerlink" title="docker cp"></a>docker cp</h2><p> 在host和container之间拷贝文件</p><h2 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a>docker commit</h2><p> 保存改动为新的image<br><a href="http://www.simapple.com/docker-commandline" target="_blank" rel="noopener">http://www.simapple.com/docker-commandline</a></p><h1 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h1><p><a href="http://www.simapple.com/docker-dockerfile" target="_blank" rel="noopener">http://www.simapple.com/docker-dockerfile</a><br>通过编写简单的文件创建docker镜像</p><p>FROM: base image</p><p>RUN: 执行命令</p><p>ADD： 添加文件</p><p>COPY： 拷贝文件</p><p>CMD： 执行命令，打包完成之后</p><p>EXPOSE： 暴露端口</p><p>WORKDIR： 指定路径</p><p>MAINTAINER: 维护者</p><p>ENV: 设定环境变量</p><p>ENTRYPOINT: 容器入口</p><p>USER: 指定用户</p><p>VOLUME: mount point</p><pre><code class="shell">touch Dockerfiledocker build -t hello_docker .使用.目录下的dockerfile文件创建一个叫做hello_docker的镜像，</code></pre><h1 id="使用docker步骤"><a href="#使用docker步骤" class="headerlink" title="使用docker步骤"></a>使用docker步骤</h1>]]></content>
+    <content type="html"><![CDATA[<p>可以粗糙的理解为轻量级的虚拟机，把程序放在单独的环境中运行</p><p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p><h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h2><p> 获取image</p><h2 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h2><p> 创建image</p><h2 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h2><p> 列出image</p><h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><p> 运行container，跑一个项目</p><pre><code class="dockerfile">    docker run \        --name ${pjName} \# 容器名        --rm \# 停止运行后自动删除当前容器        -ti \# t for terminal,i for interact        -v $$(pwd):/var/www/html \# 映射当前目录到容器指定目录        -p 3000:3000 \# 映射端口到容器端口        mooxe/node \        /bin/bash# 额外加一个命令，只能加一个# 这是运行bash shell</code></pre><h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h2><p> 列出container，项目们<br> -a</p><p> 列出隐藏的</p><h2 id="docker-rm"><a href="#docker-rm" class="headerlink" title="docker rm"></a>docker rm</h2><p> 删除container</p><h2 id="docker-rmi"><a href="#docker-rmi" class="headerlink" title="docker rmi"></a>docker rmi</h2><p> 删除image</p><h2 id="docker-cp"><a href="#docker-cp" class="headerlink" title="docker cp"></a>docker cp</h2><p> 在host和container之间拷贝文件</p><h2 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a>docker commit</h2><p> 保存改动为新的image</p><h1 id="dockerfile"><a href="#dockerfile" class="headerlink" title="dockerfile"></a>dockerfile</h1><p>FROM: base image</p><p>RUN: 执行命令</p><p>ADD： 添加文件</p><p>COPY： 拷贝文件</p><p>CMD： 执行命令，打包完成之后</p><p>EXPOSE： 暴露端口</p><p>WORKDIR： 指定路径</p><p>MAINTAINER: 维护者</p><p>ENV: 设定环境变量</p><p>ENTRYPOINT: 容器入口</p><p>USER: 指定用户</p><p>VOLUME: mount point</p><pre><code class="sh"># 可以指定依赖的node镜像的版本 node:&lt;version&gt;，如果不指定，就会是最新的FROM node:8.6.0# 创建工作目录，对应的是应用代码存放在容器内的路径WORKDIR /usr/src/app# 把 package.json，package-lock.json(npm@5+) 或 yarn.lock 复制到工作目录(相对路径)COPY package.json *.lock .# 只安装dependencies依赖# node镜像自带yarnRUN yarn --only=prod --registry=https://registry.npm.taobao.org# 把其他源文件复制到工作目录COPY . .# 替换成应用实际的端口号EXPOSE ${app_port}# 这里根据实际起动命令做修改CMD [ &quot;npm&quot;, &quot;start&quot; ]</code></pre><pre><code class="shell">touch Dockerfiledocker build -t hello_docker .使用.目录下的dockerfile文件创建一个叫做hello_docker的镜像，</code></pre><h1 id="使用docker步骤"><a href="#使用docker步骤" class="headerlink" title="使用docker步骤"></a>使用docker步骤</h1><h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><h2 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h2><pre><code>&lt;!-- 拉取镜像 --&gt;docker image pull imagename&lt;!-- 查看镜像 --&gt;docker images</code></pre><h2 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h2><p>docker commit将指定容器保存为新的镜像</p><pre><code>docker commit &lt;Container ID&gt; &lt;Name&gt;:&lt;Tag&gt;docker commit fldhsa5342hkjhs bitcoin:0.1</code></pre><p>根据dockerfile创建镜像</p><pre><code>docker build -t imagename .</code></pre><h2 id="生成容器"><a href="#生成容器" class="headerlink" title="生成容器"></a>生成容器</h2><p>image 文件生成的容器实例，本身也是一个文件，称为容器文件。也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</p><pre><code class="sh"># 运行镜像 docker run -p 8000:3000 -it koa-demo:0.0.1 /bin/bash# 删除容器 docker rm [containerID]</code></pre><ul><li>-p参数：容器的 3000 端口映射到本机的 8000 端口。</li><li>-it参数：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。</li><li>koa-demo:0.0.1：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签）。</li><li>/bin/bash：容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。</li></ul><h2 id="保存镜像"><a href="#保存镜像" class="headerlink" title="保存镜像"></a>保存镜像</h2>]]></content>
     
     <summary type="html">
     
@@ -452,55 +502,6 @@ TDD:定义接口测试接口--&amp;gt;提交PR并讨论
     </summary>
     
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计需求分析与方案选择</title>
-    <link href="http://yoursite.com/2017/12/21/%E8%AE%BE%E8%AE%A1%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E4%B8%8E%E6%96%B9%E6%A1%88%E9%80%89%E6%8B%A9/"/>
-    <id>http://yoursite.com/2017/12/21/设计需求分析与方案选择/</id>
-    <published>2017-12-21T11:01:49.000Z</published>
-    <updated>2018-06-14T02:56:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>设计师的基本思路是，解决了什么问题，为什么要这样解决</p><p>了解问题比提供解决方案重要</p><h3 id="设计方案不能令人满意的原因"><a href="#设计方案不能令人满意的原因" class="headerlink" title="设计方案不能令人满意的原因"></a>设计方案不能令人满意的原因</h3><ol><li>没有细致的沟通==业务需求==，一直改方案，没有自己的观点</li><li>没有仔细的分析==用户需求==，只是简单的进行页面排版</li><li>没有对==用户体验路径==进行仔细分析，缺乏一个好的方式引导用户使用</li></ol><h4 id="业务需求-业务目的-业务目标"><a href="#业务需求-业务目的-业务目标" class="headerlink" title="业务需求 = 业务目的 + 业务目标"></a>业务需求 = 业务目的 + 业务目标</h4><p>业务目的：为什么要做这块业务，当中存在哪些问题<br>业务目标：做了这块业务之后，产品期望得到怎样的结果</p><h4 id="用户需求-目标用户（特征、经验）-场景-行为-体验目标"><a href="#用户需求-目标用户（特征、经验）-场景-行为-体验目标" class="headerlink" title="用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标"></a>用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标</h4><p>谁在什么时候有什么样的行为，目标是什么</p><h4 id="用户体验路径"><a href="#用户体验路径" class="headerlink" title="用户体验路径"></a>用户体验路径</h4><p>搞清楚用户在使用前，使用中，使用后的各个接触点，确保设计方案能够形成闭环</p><h1 id="需求分析四步"><a href="#需求分析四步" class="headerlink" title="需求分析四步"></a>需求分析四步</h1><h2 id="一-分析业务需求"><a href="#一-分析业务需求" class="headerlink" title="一 分析业务需求"></a>一 分析业务需求</h2><p>业务需求 = 业务目的 + 业务目标<br>业务目的：为什么要做这块业务，当中存在哪些问题<br>业务目标：做了这块业务之后，产品期望得到怎样的结果</p><p>目的是达到了某个目标之后想要做的事情，也就是实现目标的真正动机</p><p>例：</p><table><thead><tr><th>业务需求</th><th>业务目的</th><th>业务目标</th></tr></thead><tbody><tr><td>注册</td><td>通过登记用户信息，以方便产品进行用户管理</td><td>提高注册页面的转化率</td></tr></tbody></table><p>提供用户注册是一个业务需求，提高注册转化率是它的业务目标。当我们提高了注册转化率，就能获得更多的注册用户数，从而实现有效进行用户管理的目的。</p><h3 id="互联网产品常见的目标（提升-降低）"><a href="#互联网产品常见的目标（提升-降低）" class="headerlink" title="互联网产品常见的目标（提升/降低）"></a>互联网产品常见的目标（提升/降低）</h3><table><thead><tr><th>类别</th><th>常见目标</th></tr></thead><tbody><tr><td>产品类</td><td>PV，UV，用户数，转化率，留存率，活跃度等等</td></tr><tr><td>市场类</td><td>传播量，市场份额，各种排名等</td></tr><tr><td>品牌类</td><td>服务认知，品牌认知，品牌忠诚度等等</td></tr><tr><td>营收类</td><td>销售量，销售额，利润率，ROI等等</td></tr></tbody></table><h3 id="制定具体的目标时，要符合smart原则"><a href="#制定具体的目标时，要符合smart原则" class="headerlink" title="制定具体的目标时，要符合smart原则"></a>制定具体的目标时，要符合smart原则</h3><p>S:specific，具体<br>M:measurable，可衡量<br>A:attainable，可实现<br>R:relevant，有关联<br>T:time-based，有时限</p><h3 id="没有目标导致的结果"><a href="#没有目标导致的结果" class="headerlink" title="没有目标导致的结果"></a>没有目标导致的结果</h3><ol><li>方案的讨论容易发散</li><li>方案的评估缺乏评判标准</li><li>方案的效果无法衡量<br>4.</li></ol><h3 id="了解目的和目标之后"><a href="#了解目的和目标之后" class="headerlink" title="了解目的和目标之后"></a>了解目的和目标之后</h3><h2 id="二-分析用户需求"><a href="#二-分析用户需求" class="headerlink" title="二 分析用户需求"></a>二 分析用户需求</h2><p>用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标<br>谁在什么时候有什么样的行为，目标是什么</p><h2 id="三-分解关键因素"><a href="#三-分解关键因素" class="headerlink" title="三 分解关键因素"></a>三 分解关键因素</h2><p>用户的动机，担忧，障碍</p><p>实现业务目标的关键因素</p><ol><li>创造动机，促进用户行为</li><li>排除担忧，排除行为前的担忧</li><li>解决障碍，解决行为中的障碍</li></ol><h2 id="四-归纳设计需求，明确设计策略"><a href="#四-归纳设计需求，明确设计策略" class="headerlink" title="四 归纳设计需求，明确设计策略"></a>四 归纳设计需求，明确设计策略</h2><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>将业务目标，用户目标转化成有效的解决方案</p><h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><p>如何将==业务目标==转化为==用户行为==，即通过引导用户的使用来帮助产品实现目标</p><p>从设计==用户行为==到设计==用户界面==：<br>用户行为决定了用户界面，用户界面页导致了用户会出现什么样的行为</p><h3 id="如何选择解决方案"><a href="#如何选择解决方案" class="headerlink" title="如何选择解决方案"></a>如何选择解决方案</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;设计师的基本思路是，解决了什么问题，为什么要这样解决&lt;/p&gt;
-&lt;p&gt;了解问题比提供解决方案重要&lt;/p&gt;
-&lt;h3 id=&quot;设计方案不能令人满意的原因&quot;&gt;&lt;a href=&quot;#设计方案不能令人满意的原因&quot; class=&quot;headerlink&quot; title=&quot;设计方案不能令人满意的
-      
-    
-    </summary>
-    
-      <category term="产品" scheme="http://yoursite.com/categories/%E4%BA%A7%E5%93%81/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>用户调研思考</title>
-    <link href="http://yoursite.com/2017/12/21/%E7%94%A8%E6%88%B7%E8%B0%83%E7%A0%94%E6%80%9D%E8%80%83/"/>
-    <id>http://yoursite.com/2017/12/21/用户调研思考/</id>
-    <published>2017-12-21T11:00:33.000Z</published>
-    <updated>2018-06-14T02:55:35.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>拿到小房东手里的房源信息</p><h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>让更多的小房东使用我们的房屋租赁管理工具</p><h1 id="问题-远一点"><a href="#问题-远一点" class="headerlink" title="问题 远一点"></a>问题 远一点</h1><p>这是一个怎样的市场</p><p>市场上的房子是什么样的？种类及比例</p><p>市场上的房东是什么样的？种类及比例</p><p>市场上的租客是什么样的？种类及比例</p><p>未来几年内，房子，房东，租客又是什么样的？</p><h1 id="目标用户"><a href="#目标用户" class="headerlink" title="目标用户"></a>目标用户</h1><p>手里有几套房的，自己运营的房东</p><p>这群人有多少？他们有多少房？直接决定我们能做成多大的平台。</p><p>个体户足够多才能形成平台，平台足够大才能吸引大房东。</p><p>了解这样的个体户。</p><h2 id="问题-近"><a href="#问题-近" class="headerlink" title="问题 近"></a>问题 近</h2><h4 id="我们的目标用户是什么样的人？"><a href="#我们的目标用户是什么样的人？" class="headerlink" title="我们的目标用户是什么样的人？"></a>我们的目标用户是什么样的人？</h4><p>手里有房子需要租出去的人</p><h4 id="我们的功能"><a href="#我们的功能" class="headerlink" title="我们的功能"></a>我们的功能</h4><p>帮助所有需要把房租出去的人解决问题</p><h4 id="他们的数量"><a href="#他们的数量" class="headerlink" title="他们的数量"></a>他们的数量</h4><p>这决定了我们的平台第一阶段能够有多大</p><h4 id="用户画像"><a href="#用户画像" class="headerlink" title="用户画像"></a>用户画像</h4><ol><li>一房东，二房东</li><li>业余，全职</li><li>房子少，房子多</li><li>个人，团队</li><li>用过工具，没用过工具</li><li>学习能力强，不强</li></ol><p>使用设备</p><p>常用APP</p><p>痛点，品牌偏好</p><p>不同的产品，用来描述用户的角度有所不同，即用户画像的内容纬度会有所不同</p><p>==场景故事== 时间，地点，干什么</p><p>一般会有3~6个用户</p><p>==用户画像==：<br>通过用户的目标，行为，观点，基本信息等，对其真实特征进行勾勒，一般会得到3~6个画像/人物角色，每个画像代表一群真实的人</p><p>就像小说里的角色，都是作者观察生活总结出来的典型</p><p>画像之后调研比例，形成定量用户画像</p><h4 id="他们的日常生活"><a href="#他们的日常生活" class="headerlink" title="他们的日常生活"></a>他们的日常生活</h4><h4 id="对于工具的需求如何？"><a href="#对于工具的需求如何？" class="headerlink" title="对于工具的需求如何？"></a>对于工具的需求如何？</h4><h4 id="面向小房东的管理工具？"><a href="#面向小房东的管理工具？" class="headerlink" title="面向小房东的管理工具？"></a>面向小房东的管理工具？</h4><h4 id="房屋租赁管理的基本需求"><a href="#房屋租赁管理的基本需求" class="headerlink" title="房屋租赁管理的基本需求"></a>房屋租赁管理的基本需求</h4><h4 id="我们的工具能在多大程度上帮助他们"><a href="#我们的工具能在多大程度上帮助他们" class="headerlink" title="我们的工具能在多大程度上帮助他们"></a>我们的工具能在多大程度上帮助他们</h4><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这是一个4.6万亿的市场。有前景。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h1&gt;&lt;p&gt;拿到小房东手里的房源信息&lt;/p&gt;
-&lt;h1 id=&quot;目标&quot;&gt;&lt;a href=&quot;#目标&quot; class=&quot;headerlink&quot; title=&quot;目
-      
-    
-    </summary>
-    
-      <category term="产品" scheme="http://yoursite.com/categories/%E4%BA%A7%E5%93%81/"/>
     
     
   </entry>
