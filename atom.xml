@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-09T15:40:19.000Z</updated>
+  <updated>2018-08-09T03:38:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="http://yoursite.com/2018/08/09/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2018/08/09/Linux常用命令/</id>
+    <published>2018-08-09T03:35:09.000Z</published>
+    <updated>2018-08-09T03:38:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><pre><code class="shell">ps -a| grep name# 查看指定程序的进程id#用于显示tcp，udp的端口和进程等相关情况netstat -tunlp# 切换用户su name</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h1&gt;&lt;pre&gt;&lt;code class=&quot;shell&quot;&gt;ps -a| grep name
+# 查看指定程序的进程id
+
+#用于显示tcp
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>部署流程</title>
@@ -479,29 +505,6 @@ TDD:定义接口测试接口--&amp;gt;提交PR并讨论
     </summary>
     
       <category term="程序员修养" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E5%85%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>cs总结</title>
-    <link href="http://yoursite.com/2017/12/21/cs%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/2017/12/21/cs总结/</id>
-    <published>2017-12-21T11:20:37.000Z</published>
-    <updated>2018-06-14T02:56:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h3 id="熟悉"><a href="#熟悉" class="headerlink" title="熟悉"></a>熟悉</h3><pre><code class="coffeescript"># 列表解析result = (item.value for item in array when item.name is &#39;test&#39;)# 前十个全局属性(变量)globals = (name for name of window)[0...10]# 对象解析ages = for key, value of Object  &quot;#{key} is #{value}&quot;# 定义函数square = (x) -&gt;  x * x  # body...  # 定义的时候有括号，调用的时候没括号# 数组song = [  &#39;do&#39;  &#39;re&#39;  &#39;mi&#39;  &#39;fa&#39;  &#39;so&#39;]# 对象singers =  brother:    name:&#39;max&#39;    age:11  sister:    name:&#39;ida&#39;    age:9    s-sister:      name:&#39;haha&#39;      age:2# if elseif one and/or/is/not two  # body...else  # body...# 三元判断date = if one and two then value else other# 函数链式调用$ &#39;body&#39;.click (e) -&gt;  $ &#39;.box&#39;  .fadeIn &#39;fast&#39;  .addClass &#39;show&#39; .css &#39;background&#39;, &#39;white&#39;# 回调写法和胖箭头函数Account = (customer,cart) -&gt;  @customer = customer  @cart = cart  $(&#39;.shapping_cart&#39;)  .on &#39;click&#39;, (event) =&gt;    @customer.purchase @cart# promise写法sleep = (ms) -&gt;  new Promise (resolve) -&gt;    window.setTimeout resovle,ms# async写法直接写在普通函数里，阻塞的执行# 类的写法class Animal  constructor: (@name) -&gt;  move:(meters) -&gt;    alert @name + &quot; moved #{meters}m.&quot;    # body...</code></pre><h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>编译命令，</p><pre><code>coffee -c -o targetfolder filename</code></pre><p>先是两个参数，然后是目标文件夹，最后是编译的文件</p><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ol><li>数组换行可以省略一个逗号，那就都换行吧，彻底抛弃逗号</li><li>直接加尾巴截取数组，还可以直接用来赋值<pre><code>[0...10]</code></pre></li></ol><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><ol><li>对象的花括号用缩进代替</li></ol><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数的区别，</p><ol><li>定义的时候有括号，调用的时候没括号,调用的时候没有参数也需要括号</li><li>函数没有大括号，用箭头识别，箭头左边小括号里放参数，右边是函数体</li><li>函数默认返回函数体最后一个表达式的值，可以省略return</li><li>空return取消return</li><li>变量不需要声明，所以函数名也不需要声明</li><li>默认参数</li><li>胖箭头函数，作用只是绑定this？ 需要返回一个绑定this的函数的时候使用</li></ol><h4 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h4><p>直接把await写在普通函数里</p><h3 id="词法作用域和变量安全"><a href="#词法作用域和变量安全" class="headerlink" title="词法作用域和变量安全"></a>词法作用域和变量安全</h3><h4 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h4><h4 id="变量安全"><a href="#变量安全" class="headerlink" title="变量安全"></a>变量安全</h4><ol><li>函数的所有 CoffeeScript 结果都被一个匿名函数包裹</li></ol><pre><code>(function(){ ... })();</code></pre><p>这层安全的封装, 加上自动生成的 var 关键字,使得不小心污染全局命名空间很难发生.</p><ol><li>因为被包裹了，用顶层变量, 需要将其作为赋值在 window 上, 或者在 CommonJS 里的 exports 上.</li><li>存在操作符(existential operator)可以帮你写出一个可靠的方式找到添加位置; 比如你的目标是同时满足 CommonJS 和浏览器: exports ? this<br>4.</li></ol><h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><ol><li>一个判断一个赋值的判断简写</li></ol><pre><code>name = value if condition</code></pre><ol><li>普通写法,和js相比就是省略了条件的小括号和函数体的大括号</li><li>三元判断符</li></ol><pre><code>name = if condition then rightvalue else wrongvalue</code></pre><ol><li>unless: 不是… ，就执行，是就跳过</li></ol><pre><code>return 哈哈哈 unless 嘿嘿嘿//如果不是嘿嘿嘿，就返回哈哈哈//如果是嘿嘿嘿，就跳过往下执行//作用：满足嘿嘿嘿才能往下执行//干嘛不用if？</code></pre><p>if else 和unless都可以，看个人喜好</p><h3 id="变参"><a href="#变参" class="headerlink" title="变参"></a>变参</h3><p>变参函数定义,参数后加上…</p><p>变参函数调用,函数调用后加上…</p><h3 id="循环和推导式"><a href="#循环和推导式" class="headerlink" title="循环和推导式"></a>循环和推导式</h3><h4 id="for-in遍历数组"><a href="#for-in遍历数组" class="headerlink" title="for in遍历数组"></a>for in遍历数组</h4><pre><code>item-operation for item in 数组</code></pre><p>两个参数</p><pre><code>for in 循环的参数，第一个是值，i是index</code></pre><p>加上判断</p><pre><code>item-operation for item in 数组 when item isnt value</code></pre><p>by控制循环的跨度</p><h4 id="for-of-遍历对象"><a href="#for-of-遍历对象" class="headerlink" title="for of 遍历对象"></a>for of 遍历对象</h4><pre><code>#遍历所有键值对ages = for key,value of yearsOld  &quot;#{child is #{age}&quot;#遍历自有非继承键值对for own key,value of yearsOld#遍历gegerator用from</code></pre><h4 id="while和until"><a href="#while和until" class="headerlink" title="while和until"></a>while和until</h4><pre><code># 满足条件就一直执行buy() while supply &gt; demand# 满足条件就不执行了sell() until supply &gt; demand</code></pre><h4 id="for-in-do"><a href="#for-in-do" class="headerlink" title="for in + do"></a>for in + do</h4><p>配合起来，对每一个满足条件的元素执行操作</p><h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><table><thead><tr><th>CoffeeScript</th><th>JavaScript</th></tr></thead><tbody><tr><td>is</td><td>===</td></tr><tr><td>isnt</td><td>!==</td></tr><tr><td>not</td><td>!</td></tr><tr><td>and</td><td>&amp;&amp;</td></tr><tr><td>or</td><td></td></tr><tr><td>ture,yes,on</td><td>true</td></tr><tr><td>false,no,off</td><td>false</td></tr><tr><td>@,this</td><td>this</td></tr><tr><td>a in b</td><td>[].indexOf.call(b,a) &gt;=0</td></tr><tr><td>a of b</td><td>a in b</td></tr><tr><td>for a form b</td><td>for (a of b)</td></tr><tr><td>a ** b</td><td>Math.pow(a,b)</td></tr><tr><td>a // b</td><td>Math.floor(a/b)</td></tr><tr><td>a %% b</td><td>(a % b + b) % b</td></tr></tbody></table><h3 id="存在性操作符"><a href="#存在性操作符" class="headerlink" title="存在性操作符"></a>存在性操作符</h3><pre><code>?name# 只要不是null或者undefined就返回truespeed ?= 15# 当speed为null或者undefined的时候执行赋值</code></pre><h1 id="自己的总结"><a href="#自己的总结" class="headerlink" title="自己的总结"></a>自己的总结</h1><ol><li>没有冒号</li><li>没有括号，用换行和缩进控制层级</li><li>数组的省略写法</li><li>编译之后给module.exports外面套一层自执行函数对导出模块没有影响</li><li>if判断里面没有默认return</li></ol><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>控制返回值，不想让它包裹一层然后返回，可以写<br>return 那么对async函数有影响</p><h1 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h1><p><a href="https://cnodejs.org/topic/53a64eb1c3ee0b5820b20863" target="_blank" rel="noopener">coffeescript编码风格指南</a></p><h1 id="不喜欢的地方"><a href="#不喜欢的地方" class="headerlink" title="不喜欢的地方"></a>不喜欢的地方</h1><ol><li>关于语义化的思考</li><li>调用函数的时候，前面一个参数较复杂，后面一个参数需要仔细辨别，没有括号直观<br>3.</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;基础&quot;&gt;&lt;a href=&quot;#基础&quot; class=&quot;headerlink&quot; title=&quot;基础&quot;&gt;&lt;/a&gt;基础&lt;/h1&gt;&lt;h3 id=&quot;熟悉&quot;&gt;&lt;a href=&quot;#熟悉&quot; class=&quot;headerlink&quot; title=&quot;熟悉&quot;&gt;&lt;/a&gt;熟悉&lt;/h3&gt;&lt;pre&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
