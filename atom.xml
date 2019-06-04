@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-09T03:38:12.000Z</updated>
+  <updated>2019-06-04T09:52:14.487Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>arts打卡-1</title>
+    <link href="http://yoursite.com/2019/06/04/arts%E6%89%93%E5%8D%A1-1/"/>
+    <id>http://yoursite.com/2019/06/04/arts打卡-1/</id>
+    <published>2019-06-04T09:51:47.000Z</published>
+    <updated>2019-06-04T09:52:14.487Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><p>框架图，设计流程？</p><p>交互设计要明确产品的任务==需求==和==目标==，通过系统的==规划==，梳理产品==逻辑==关系，做出漂亮的交互设计==流程==</p><p>通过设计测试，优化产品的可用性</p><p>最终，交互设计的目标是，优化产品的用户体验</p><h2 id="2-产品开发流程与团队构成"><a href="#2-产品开发流程与团队构成" class="headerlink" title="2 产品开发流程与团队构成"></a>2 产品开发流程与团队构成</h2><h4 id="产品经理"><a href="#产品经理" class="headerlink" title="产品经理"></a>产品经理</h4><p>需求的讨论和用户的调研，确认我到底要做什么，我的目标用户是什么，他们需要什么</p><h4 id="交互设计师"><a href="#交互设计师" class="headerlink" title="交互设计师"></a>交互设计师</h4><p>产品经理完成了比较好的用户调研，需求调研之后，交互设计师来把需求落地，形成真正的功能流程和界面原型，让后面的ui和开发知道要做一个什么样的产品  </p><p>产品经理说，我们需要一个看电影的工具，交互设计师把这个工具长什么样告诉其他成员</p><h4 id="交互设计师的输出："><a href="#交互设计师的输出：" class="headerlink" title="交互设计师的输出："></a>交互设计师的输出：</h4><ol><li>交互原型图</li><li>交互设计文档</li></ol><p>还有审核视觉稿 </p><p>还要和qa一起审核开发出来的产品是不是用户真的能顺利使用</p><h2 id="3-交互设计关键着用户体验"><a href="#3-交互设计关键着用户体验" class="headerlink" title="3 交互设计关键着用户体验"></a>3 交互设计关键着用户体验</h2><p>很多产品没有经过良好的设计</p><p>用户体验的定义：</p><p>用户对于使用或期望使用的产品、系统、服务的==主观感受==和==反应==</p><p>交互设计如何影响用户体验：</p><p>更少消耗，等多需求的满足</p><p>优秀的交互设计来源于生活，比如网易云音乐的音乐播放界面的唱片播放器的设计</p><p>garrett 五个用户体验层次 《用户体验要素》</p><h1 id="设计需求分析与方案选择"><a href="#设计需求分析与方案选择" class="headerlink" title="设计需求分析与方案选择"></a>设计需求分析与方案选择</h1><h1 id="规范信息架构与流程设计"><a href="#规范信息架构与流程设计" class="headerlink" title="规范信息架构与流程设计"></a>规范信息架构与流程设计</h1><h1 id="让页面布局更优雅"><a href="#让页面布局更优雅" class="headerlink" title="让页面布局更优雅"></a>让页面布局更优雅</h1><h1 id="交互设计测试与评估"><a href="#交互设计测试与评估" class="headerlink" title="交互设计测试与评估"></a>交互设计测试与评估</h1><h1 id="项目实践"><a href="#项目实践" class="headerlink" title="项目实践"></a>项目实践</h1><h1 id="B端产品的体验设计方法与实践"><a href="#B端产品的体验设计方法与实践" class="headerlink" title="B端产品的体验设计方法与实践"></a>B端产品的体验设计方法与实践</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;概论&quot;&gt;&lt;a href=&quot;#概论&quot; class=&quot;headerlink&quot; title=&quot;概论&quot;&gt;&lt;/a&gt;概论&lt;/h1&gt;&lt;p&gt;框架图，设计流程？&lt;/p&gt;
+&lt;p&gt;交互设计要明确产品的任务==需求==和==目标==，通过系统的==规划==，梳理产品==逻辑==关系，做出
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Linux常用命令</title>
@@ -482,29 +504,6 @@ TDD:定义接口测试接口--&amp;gt;提交PR并讨论
     </summary>
     
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>算法笔记</title>
-    <link href="http://yoursite.com/2017/12/21/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/12/21/算法笔记/</id>
-    <published>2017-12-21T11:20:45.000Z</published>
-    <updated>2018-06-29T10:36:17.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><h3 id="计算时间复杂度的方法"><a href="#计算时间复杂度的方法" class="headerlink" title="计算时间复杂度的方法"></a>计算时间复杂度的方法</h3><p>数循环次数：循环的嵌套</p><p>均摊分析：(1+n)/2，一次性的操作平均到整体</p><p>递归式:主定理</p><h3 id="常见的时间复杂度"><a href="#常见的时间复杂度" class="headerlink" title="常见的时间复杂度"></a>常见的时间复杂度</h3><p>1:基本运算，+,-,*,/,%,寻址</p><p>logn：二分查找</p><p>根号n:枚举约数，少见</p><p>n:线性查找，很多时候算法的下限就是n，因为数据的读入的复杂度就已经是n了</p><p>nlogn：归并排序，快速排序的期望复杂度，基于比较排序的算法下界</p><hr><p>n的平方：朴素最近点对，冒泡排序，选择排序</p><p>n的三次方：Floyd最短路径，普通矩阵乘法</p><p>2的n次方：枚举全部的子集</p><p>n的阶乘：枚举全排列</p><h1 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h1><h1 id="搜索算法"><a href="#搜索算法" class="headerlink" title="搜索算法"></a>搜索算法</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;复杂度&quot;&gt;&lt;a href=&quot;#复杂度&quot; class=&quot;headerlink&quot; title=&quot;复杂度&quot;&gt;&lt;/a&gt;复杂度&lt;/h1&gt;&lt;h3 id=&quot;计算时间复杂度的方法&quot;&gt;&lt;a href=&quot;#计算时间复杂度的方法&quot; class=&quot;headerlink&quot; title=&quot;计
-      
-    
-    </summary>
-    
-      <category term="程序员修养" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E5%85%BB/"/>
     
     
   </entry>
