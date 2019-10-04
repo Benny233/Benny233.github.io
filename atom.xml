@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-06-04T09:52:14.487Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://iloverainbow.top/"/>
+  <updated>2019-10-04T16:25:13.764Z</updated>
+  <id>https://iloverainbow.top/</id>
   
   <author>
     <name>Benny</name>
@@ -17,9 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>阿里云效搭建单机自动化部署系统</title>
+    <link href="https://iloverainbow.top/2019/10/05/%E9%98%BF%E9%87%8C%E4%BA%91%E6%95%88%E6%90%AD%E5%BB%BA%E5%8D%95%E6%9C%BA%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://iloverainbow.top/2019/10/05/阿里云效搭建单机自动化部署系统/</id>
+    <published>2019-10-04T16:24:29.000Z</published>
+    <updated>2019-10-04T16:25:13.764Z</updated>
+    
+    <content type="html"><![CDATA[<p>嘿嘿嘿</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;嘿嘿嘿&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>arts打卡-1</title>
-    <link href="http://yoursite.com/2019/06/04/arts%E6%89%93%E5%8D%A1-1/"/>
-    <id>http://yoursite.com/2019/06/04/arts打卡-1/</id>
+    <link href="https://iloverainbow.top/2019/06/04/arts%E6%89%93%E5%8D%A1-1/"/>
+    <id>https://iloverainbow.top/2019/06/04/arts打卡-1/</id>
     <published>2019-06-04T09:51:47.000Z</published>
     <updated>2019-06-04T09:52:14.487Z</updated>
     
@@ -40,8 +62,8 @@
   
   <entry>
     <title>Linux常用命令</title>
-    <link href="http://yoursite.com/2018/08/09/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2018/08/09/Linux常用命令/</id>
+    <link href="https://iloverainbow.top/2018/08/09/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://iloverainbow.top/2018/08/09/Linux常用命令/</id>
     <published>2018-08-09T03:35:09.000Z</published>
     <updated>2018-08-09T03:38:12.000Z</updated>
     
@@ -59,15 +81,15 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>部署流程</title>
-    <link href="http://yoursite.com/2018/07/09/%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/07/09/部署流程/</id>
+    <link href="https://iloverainbow.top/2018/07/09/%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/"/>
+    <id>https://iloverainbow.top/2018/07/09/部署流程/</id>
     <published>2018-07-09T15:39:07.000Z</published>
     <updated>2018-07-09T15:40:19.000Z</updated>
     
@@ -83,15 +105,15 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>Nginx笔记</title>
-    <link href="http://yoursite.com/2018/07/09/Nginx%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/07/09/Nginx笔记/</id>
+    <link href="https://iloverainbow.top/2018/07/09/Nginx%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iloverainbow.top/2018/07/09/Nginx笔记/</id>
     <published>2018-07-09T14:44:54.000Z</published>
     <updated>2018-07-09T14:45:24.000Z</updated>
     
@@ -109,15 +131,15 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>非暴力沟通</title>
-    <link href="http://yoursite.com/2018/07/03/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/"/>
-    <id>http://yoursite.com/2018/07/03/非暴力沟通/</id>
+    <link href="https://iloverainbow.top/2018/07/03/%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%B2%9F%E9%80%9A/"/>
+    <id>https://iloverainbow.top/2018/07/03/非暴力沟通/</id>
     <published>2018-07-03T05:10:00.000Z</published>
     <updated>2018-07-03T05:10:53.000Z</updated>
     
@@ -133,15 +155,15 @@
     
     </summary>
     
-      <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="https://iloverainbow.top/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>Fabric基础笔记</title>
-    <link href="http://yoursite.com/2018/07/01/Fabric%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/07/01/Fabric基础笔记/</id>
+    <link href="https://iloverainbow.top/2018/07/01/Fabric%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iloverainbow.top/2018/07/01/Fabric基础笔记/</id>
     <published>2018-07-01T05:20:59.000Z</published>
     <updated>2018-07-01T05:22:25.000Z</updated>
     
@@ -157,15 +179,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>智能合约基础笔记</title>
-    <link href="http://yoursite.com/2018/06/30/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/06/30/智能合约基础笔记/</id>
+    <link href="https://iloverainbow.top/2018/06/30/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iloverainbow.top/2018/06/30/智能合约基础笔记/</id>
     <published>2018-06-30T09:25:46.000Z</published>
     <updated>2018-06-30T09:26:13.000Z</updated>
     
@@ -180,15 +202,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>Makefile笔记</title>
-    <link href="http://yoursite.com/2018/06/29/makefile%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/06/29/makefile笔记/</id>
+    <link href="https://iloverainbow.top/2018/06/29/makefile%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iloverainbow.top/2018/06/29/makefile笔记/</id>
     <published>2018-06-29T13:43:39.000Z</published>
     <updated>2018-06-29T13:44:01.000Z</updated>
     
@@ -204,15 +226,15 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>Docker笔记</title>
-    <link href="http://yoursite.com/2018/06/29/Docker%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/06/29/Docker笔记/</id>
+    <link href="https://iloverainbow.top/2018/06/29/Docker%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iloverainbow.top/2018/06/29/Docker笔记/</id>
     <published>2018-06-29T13:42:43.000Z</published>
     <updated>2018-07-09T15:39:43.000Z</updated>
     
@@ -228,15 +250,15 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>区块链基础知识</title>
-    <link href="http://yoursite.com/2018/06/29/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    <id>http://yoursite.com/2018/06/29/区块链/</id>
+    <link href="https://iloverainbow.top/2018/06/29/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    <id>https://iloverainbow.top/2018/06/29/区块链/</id>
     <published>2018-06-29T10:33:53.000Z</published>
     <updated>2018-06-29T10:34:22.000Z</updated>
     
@@ -252,15 +274,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>比特币基础知识</title>
-    <link href="http://yoursite.com/2018/06/29/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
-    <id>http://yoursite.com/2018/06/29/比特币/</id>
+    <link href="https://iloverainbow.top/2018/06/29/%E6%AF%94%E7%89%B9%E5%B8%81/"/>
+    <id>https://iloverainbow.top/2018/06/29/比特币/</id>
     <published>2018-06-29T10:32:34.000Z</published>
     <updated>2018-06-29T10:34:40.000Z</updated>
     
@@ -275,15 +297,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>区块链中的密码学技术</title>
-    <link href="http://yoursite.com/2018/06/29/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6%E6%8A%80%E6%9C%AF/"/>
-    <id>http://yoursite.com/2018/06/29/区块链中的密码学技术/</id>
+    <link href="https://iloverainbow.top/2018/06/29/%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6%E6%8A%80%E6%9C%AF/"/>
+    <id>https://iloverainbow.top/2018/06/29/区块链中的密码学技术/</id>
     <published>2018-06-29T10:10:10.000Z</published>
     <updated>2018-06-29T10:10:30.000Z</updated>
     
@@ -298,15 +320,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>敏捷编码</title>
-    <link href="http://yoursite.com/2018/06/23/%E6%95%8F%E6%8D%B7%E7%BC%96%E7%A0%81/"/>
-    <id>http://yoursite.com/2018/06/23/敏捷编码/</id>
+    <link href="https://iloverainbow.top/2018/06/23/%E6%95%8F%E6%8D%B7%E7%BC%96%E7%A0%81/"/>
+    <id>https://iloverainbow.top/2018/06/23/敏捷编码/</id>
     <published>2018-06-23T15:35:05.000Z</published>
     <updated>2018-06-23T15:40:14.000Z</updated>
     
@@ -322,15 +344,15 @@
     
     </summary>
     
-      <category term="程序员修养" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E5%85%BB/"/>
+      <category term="程序员修养" scheme="https://iloverainbow.top/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E5%85%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>合作的进化</title>
-    <link href="http://yoursite.com/2018/06/17/%E5%90%88%E4%BD%9C%E7%9A%84%E8%BF%9B%E5%8C%96/"/>
-    <id>http://yoursite.com/2018/06/17/合作的进化/</id>
+    <link href="https://iloverainbow.top/2018/06/17/%E5%90%88%E4%BD%9C%E7%9A%84%E8%BF%9B%E5%8C%96/"/>
+    <id>https://iloverainbow.top/2018/06/17/合作的进化/</id>
     <published>2018-06-17T12:41:59.000Z</published>
     <updated>2018-06-17T12:42:27.000Z</updated>
     
@@ -346,15 +368,15 @@
     
     </summary>
     
-      <category term="读书" scheme="http://yoursite.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+      <category term="读书" scheme="https://iloverainbow.top/categories/%E8%AF%BB%E4%B9%A6/"/>
     
     
   </entry>
   
   <entry>
     <title>iterm快捷键总结</title>
-    <link href="http://yoursite.com/2018/06/04/iterm/"/>
-    <id>http://yoursite.com/2018/06/04/iterm/</id>
+    <link href="https://iloverainbow.top/2018/06/04/iterm/"/>
+    <id>https://iloverainbow.top/2018/06/04/iterm/</id>
     <published>2018-06-04T15:38:02.000Z</published>
     <updated>2018-06-14T02:56:42.000Z</updated>
     
@@ -372,15 +394,15 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>区块链架构</title>
-    <link href="http://yoursite.com/2018/05/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%9E%B6%E6%9E%84/"/>
-    <id>http://yoursite.com/2018/05/26/区块链架构/</id>
+    <link href="https://iloverainbow.top/2018/05/26/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%9E%B6%E6%9E%84/"/>
+    <id>https://iloverainbow.top/2018/05/26/区块链架构/</id>
     <published>2018-05-26T14:47:23.000Z</published>
     <updated>2018-06-29T10:07:43.000Z</updated>
     
@@ -396,15 +418,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>共识算法详解</title>
-    <link href="http://yoursite.com/2018/05/26/%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://yoursite.com/2018/05/26/共识算法详解/</id>
+    <link href="https://iloverainbow.top/2018/05/26/%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://iloverainbow.top/2018/05/26/共识算法详解/</id>
     <published>2018-05-26T12:14:43.000Z</published>
     <updated>2018-06-29T10:07:38.000Z</updated>
     
@@ -425,15 +447,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>以太坊笔记</title>
-    <link href="http://yoursite.com/2018/05/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
-    <id>http://yoursite.com/2018/05/25/以太坊/</id>
+    <link href="https://iloverainbow.top/2018/05/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
+    <id>https://iloverainbow.top/2018/05/25/以太坊/</id>
     <published>2018-05-25T10:12:03.000Z</published>
     <updated>2018-06-29T10:07:33.000Z</updated>
     
@@ -449,15 +471,15 @@
     
     </summary>
     
-      <category term="区块链" scheme="http://yoursite.com/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>TDD笔记</title>
-    <link href="http://yoursite.com/2017/12/21/TDD%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/12/21/TDD笔记/</id>
+    <link href="https://iloverainbow.top/2017/12/21/TDD%E7%AC%94%E8%AE%B0/"/>
+    <id>https://iloverainbow.top/2017/12/21/TDD笔记/</id>
     <published>2017-12-21T11:22:36.000Z</published>
     <updated>2018-06-29T10:08:10.000Z</updated>
     
@@ -478,32 +500,7 @@ TDD:定义接口测试接口--&amp;gt;提交PR并讨论
     
     </summary>
     
-      <category term="程序员修养" scheme="http://yoursite.com/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E5%85%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>基础数据结构</title>
-    <link href="http://yoursite.com/2017/12/21/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/2017/12/21/基础数据结构/</id>
-    <published>2017-12-21T11:21:07.000Z</published>
-    <updated>2018-06-14T02:56:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>数据结构，数据存储的方法，包括数据对象，和操作集，不包括具体实现。具体实现是算法</p><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>检索简单，增删难</p><h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><p>Set，不重复的数组</p><h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>增删简单，检索难。插入删除内存和时间消耗小，查询消耗大，适合插入多，查询少的情景</p><p>广义表：是线性表的推广，元素可以是另一个广义表</p><p>多重链表：节点可能属于多个链表，双向链表不是多重链表。树和图就是用多重链表实现</p><p>稀疏矩阵用多重链表存储。</p><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>先进后出</p><p>表达式求值，递归，函数调用，深度优先搜索，回溯算法</p><p>具有一定操作约束的线性表</p><h5 id="栈的实现"><a href="#栈的实现" class="headerlink" title="栈的实现"></a>栈的实现</h5><p>一维数组和一个记录栈顶元素位置的变量</p><p>链表实现，从头部插入</p><h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>也是一种受限制的线性表，先进先出</p><p>普通线性表在所有位置都可以增删，堆栈只在顶部增删，队列只在头尾增删</p><p>用链表实现的时候，因为链表的尾部不能执行删除操作，所以队列的头部只能是链表的头部</p><h5 id="典型问题"><a href="#典型问题" class="headerlink" title="典型问题"></a>典型问题</h5><ol><li>优先队列</li><li>循环队列</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;数据结构，数据存储的方法，包括数据对象，和操作集，不包括具体实现。具体实现是算法&lt;/p&gt;
-&lt;h3 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h3&gt;&lt;p&gt;检索简单，增删难&lt;/p&gt;
-&lt;h3 id=&quot;集
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="程序员修养" scheme="https://iloverainbow.top/categories/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E5%85%BB/"/>
     
     
   </entry>
