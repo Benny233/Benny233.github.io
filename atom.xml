@@ -48,16 +48,18 @@
     <link href="https://iloverainbow.top/2019/10/05/%E9%98%BF%E9%87%8C%E4%BA%91%E6%95%88%E6%90%AD%E5%BB%BA%E5%8D%95%E6%9C%BA%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2%E7%B3%BB%E7%BB%9F/"/>
     <id>https://iloverainbow.top/2019/10/05/阿里云效搭建单机自动化部署系统/</id>
     <published>2019-10-04T16:24:29.000Z</published>
-    <updated>2019-10-09T10:30:18.719Z</updated>
+    <updated>2019-10-10T08:12:30.970Z</updated>
     
-    <content type="html"><![CDATA[<p>嘿嘿嘿</p>]]></content>
+    <content type="html"><![CDATA[<p>本来想搭一套k8s，一劳永逸，奈何坑太大，个子太矮，没趟过去。</p><p>那就用云效吧。根据文档操作，再稍作修改，就阔以了。</p><p>主要用在测试环境，生产的灰度发布等等高级功能还没探索。</p><h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p><a href="https://help.aliyun.com/document_detail/125756.html?spm=a2c4g.11186623.6.551.3b68424cuu1dyH" target="_blank" rel="noopener">先按照这个文档走下流程</a></p><p>在文档中的<code>部署配置</code>这一步之前增加一步镜像构建的操作，这一步会产出<code>制品</code>(用来部署)，部署操作里拿到制品才能进行。</p><p>镜像的标签写死，我写的latest，后面会用到。</p><h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p>部署机器可以用非阿里云的机器，阿里云牛逼。</p><p>部署配置：</p><p>下载路径空着，</p><p>执行用户是root</p><p>部署脚本参考</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop xxx <span class="comment"># 先把上一版本的容器停掉，因为启动的时候带了--rm参数，所以容器会自动删除</span></span><br><span class="line">docker rmi <span class="variable">$imageId</span> <span class="comment"># 然后把老镜像删掉，前面把标签写死就是为了这里能删掉老镜像</span></span><br><span class="line">docker run --name xxx --rm -d -p <span class="number">3000</span>:<span class="number">3000</span> <span class="variable">$imageId</span> <span class="comment"># 最后拉取镜像，跑起来</span></span><br></pre></td></tr></table></figure><h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>机器上面需要docker login，还有一些代码库，镜像库的细节，摸索一下就会了。</p><p>OK，推送代码就能触发自动部署了，倍儿爽</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;嘿嘿嘿&lt;/p&gt;
-
+        &lt;p&gt;本来想搭一套k8s，一劳永逸，奈何坑太大，个子太矮，没趟过去。&lt;/p&gt;
+&lt;p&gt;那就用云效吧。根据文档操作，再稍作修改，就阔以了。&lt;/p&gt;
+&lt;p&gt;主要用在测试环境，生产的灰度发布等等高级功能还没探索。&lt;/p&gt;
+&lt;h1 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;he
       
     
     </summary>
