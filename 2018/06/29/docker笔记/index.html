@@ -122,14 +122,6 @@
     
         
             
-            <li><div data-rel="运维">运维<small>(7)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="区块链">区块链<small>(8)</small></div>
                 
             </li>
@@ -138,7 +130,7 @@
     
         
             
-            <li><div data-rel="周打卡">周打卡<small>(1)</small></div>
+            <li><div data-rel="技术">技术<small>(6)</small></div>
                 
             </li>
             
@@ -146,7 +138,23 @@
     
         
             
-            <li><div data-rel="技术">技术<small>(6)</small></div>
+            <li><div data-rel="手册">手册<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="周打卡">周打卡<small>(1)</small></div>
                 
             </li>
             
@@ -251,15 +259,15 @@
         </a>
         
         <a  class="周打卡 "
-           href="/2019/06/04/arts打卡-1/"
+           href="/2019/06/04/周打卡1/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="arts打卡-1">arts打卡-1</span>
+            <span class="post-title" title="周打卡-1">周打卡-1</span>
             <span class="post-date" title="2019-06-04 17:51:47">2019/06/04</span>
         </a>
         
-        <a  class="运维 "
-           href="/2018/08/09/Linux常用命令/"
+        <a  class="手册 "
+           href="/2018/08/09/Linux命令手册/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Linux常用命令">Linux常用命令</span>
@@ -307,7 +315,7 @@
         </a>
         
         <a  class="运维 "
-           href="/2018/06/29/makefile笔记/"
+           href="/2018/06/29/makefile手册/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Makefile笔记">Makefile笔记</span>
@@ -362,8 +370,8 @@
             <span class="post-date" title="2018-06-17 20:41:59">2018/06/17</span>
         </a>
         
-        <a  class="运维 "
-           href="/2018/06/04/iterm/"
+        <a  class="手册 "
+           href="/2018/06/04/iterm手册/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="iterm快捷键总结">iterm快捷键总结</span>
@@ -480,7 +488,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-09 18:32:13'>2018-06-29 21:42</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-10 16:20:59'>2018-06-29 21:42</time>
         
     </div>
     <div class="article-meta">
@@ -520,10 +528,11 @@
       
         <p>可以粗糙的理解为轻量级的虚拟机，把程序放在单独的环境中运行</p>
 <p><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</a></p>
+<p>update：K8s的pod才可以理解为虚拟机，容器其实就是一个进程，被修饰过，有点特殊的进程。</p>
 <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h2><p> 获取image</p>
 <h2 id="docker-build"><a href="#docker-build" class="headerlink" title="docker build"></a>docker build</h2><p> 创建image</p>
 <h2 id="docker-images"><a href="#docker-images" class="headerlink" title="docker images"></a>docker images</h2><p> 列出image</p>
-<h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><p> 运行container，跑一个项目<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	docker <span class="keyword">run</span> \</span><br><span class="line">		--name $&#123;pjName&#125; \</span><br><span class="line"># 容器名</span><br><span class="line">		--rm \</span><br><span class="line"># 停止运行后自动删除当前容器</span><br><span class="line">		-ti \</span><br><span class="line"># t for terminal,i for interact</span><br><span class="line">		-v $$(pwd):/var/www/html \</span><br><span class="line"># 映射当前目录到容器指定目录</span><br><span class="line">		-p 3000:3000 \</span><br><span class="line"># 映射端口到容器端口</span><br><span class="line">		mooxe/node \</span><br><span class="line">		/bin/bash</span><br><span class="line"># 额外加一个命令，只能加一个</span><br><span class="line"># 这是运行bash shell</span><br></pre></td></tr></table></figure></p>
+<h2 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h2><p> 运行container，跑一个项目<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	docker <span class="keyword">run</span><span class="bash"> \</span></span><br><span class="line"><span class="bash">		--name <span class="variable">$&#123;pjName&#125;</span> \</span></span><br><span class="line"><span class="bash"><span class="comment"># 容器名</span></span></span><br><span class="line"><span class="bash">		--rm \</span></span><br><span class="line"><span class="bash"><span class="comment"># 停止运行后自动删除当前容器</span></span></span><br><span class="line"><span class="bash">		-ti \</span></span><br><span class="line"><span class="bash"><span class="comment"># t for terminal,i for interact</span></span></span><br><span class="line"><span class="bash">		-v $$(<span class="built_in">pwd</span>):/var/www/html \</span></span><br><span class="line"><span class="bash"><span class="comment"># 映射当前目录到容器指定目录</span></span></span><br><span class="line"><span class="bash">		-p 3000:3000 \</span></span><br><span class="line"><span class="bash"><span class="comment"># 映射端口到容器端口</span></span></span><br><span class="line"><span class="bash">		mooxe/node \</span></span><br><span class="line"><span class="bash">		/bin/bash</span></span><br><span class="line"><span class="bash"><span class="comment"># 额外加一个命令，只能加一个</span></span></span><br><span class="line"><span class="bash"><span class="comment"># 这是运行bash shell</span></span></span><br></pre></td></tr></table></figure></p>
 <h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h2><p> 列出container，项目们<br> -a</p>
 <p> 列出隐藏的</p>
 <h2 id="docker-rm"><a href="#docker-rm" class="headerlink" title="docker rm"></a>docker rm</h2><p> 删除container</p>
@@ -567,7 +576,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Benny">Benny</a></p>
     <p><span class="copy-title">发布时间:</span>2018-06-29, 21:42:43</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-09, 18:32:13</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-10, 16:20:59</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/06/29/Docker笔记/" title="Docker笔记">https://iloverainbow.top/2018/06/29/Docker笔记/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
