@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iloverainbow.top/"/>
-  <updated>2019-10-10T07:08:12.855Z</updated>
+  <updated>2019-10-14T03:46:10.529Z</updated>
   <id>https://iloverainbow.top/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>HTTP基础</title>
+    <link href="https://iloverainbow.top/2019/10/14/HTTP%E5%9F%BA%E7%A1%80/"/>
+    <id>https://iloverainbow.top/2019/10/14/HTTP基础/</id>
+    <published>2019-10-14T03:43:22.000Z</published>
+    <updated>2019-10-14T03:46:10.529Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTTP基础"><a href="#HTTP基础" class="headerlink" title="HTTP基础"></a>HTTP基础</h1><h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><h5 id="OSI模型7层"><a href="#OSI模型7层" class="headerlink" title="OSI模型7层"></a>OSI模型7层</h5><p>应用层：各种应用软件，包括 Web 应用。</p><p>标识层：数据格式标识，基本压缩加密功能。</p><p>会话层：控制应用程序之间会话能力；如不同软件数据分发给不同软件。</p><p>传输层：端到端传输数据的基本功能；如 TCP、UDP。</p><p>网络层：定义IP编址，定义路由功能；如不同设备的数据转发。</p><p>数据链路层：定义数据的基本格式，如何传输，如何标识；如网卡MAC地址。</p><p>物理层：底层数据传输，如网线；网卡标准。 </p><p><img src="https://bennypic.oss-cn-hangzhou.aliyuncs.com/notes/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B.png" alt=""></p><h3 id="三次握手和四次挥手"><a href="#三次握手和四次挥手" class="headerlink" title="三次握手和四次挥手"></a>三次握手和四次挥手</h3><p><img src="https://bennypic.oss-cn-hangzhou.aliyuncs.com/notes/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.gif" alt=""></p><p><strong>为什么要三次握手</strong>？</p><p><code>这个问题的本质是, 信道不可靠, 但是通信双发需要就某个问题达成一致. 而要解决这个问题, 无论你在消息中包含什么信息, 三次通信是理论上的最小值. 所以三次握手不是TCP本身的要求, 而是为了满足&quot;在不可靠信道上可靠地传输信息&quot;这一需求所导致的. 请注意这里的本质需求,信道不可靠, 数据传输要可靠. 三次达到了, 那后面你想接着握手也好, 发数据也好, 跟进行可靠信息传输的需求就没关系了. 因此,如果信道是可靠的, 即无论什么时候发出消息, 对方一定能收到, 或者你不关心是否要保证对方收到你的消息, 那就能像UDP那样直接发送消息就可以了.</code></p><p><strong>为了保证服务端能收接受到客户端的信息并能做出正确的应答而进行前两次(第一次和第二次)握手</strong>(服务端验证)</p><p><strong>为了保证客户端能够接收到服务端的信息并能做出正确的应答而进行后两次(第二次和第三次)握手</strong>(客户端验证)</p><h3 id="socket"><a href="#socket" class="headerlink" title="socket"></a>socket</h3><p>它是网络<strong>通信过程中端点的抽象表示</strong>，包含进行网络通信必须的五种信息：连接使用的协议，本地主机的IP地址，本地进程的协议端口，远地主机的IP地址，远地进程的协议端口。</p><p>Socket 是对 TCP/IP 协议族的一种封装，是应用层与TCP/IP协议族通信的中间软件抽象层。从设计模式的角度看来，<strong>Socket其实就是一个门面模式</strong>，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p><p>Socket 起源于 Unix ，Unix/Linux 基本哲学之一就是“<strong>一切皆文件</strong>”，都可以用“打开(open) –&gt; 读写(write/read) –&gt; 关闭(close)”模式来进行操作。因此 Socket 也被处理为一种特殊的文件。</p><h6 id="socket与TCP"><a href="#socket与TCP" class="headerlink" title="socket与TCP"></a>socket与TCP</h6><p>创建Socket连接时，可以指定使用的传输层协议，Socket可以支持不同的传输层协议（TCP或UDP），当使用TCP协议进行连接时，该Socket连接就是一个TCP连接。</p><p>由于通常情况下Socket连接就是TCP连接，因此Socket连接一旦建立，通信双方即可开始相互发送数据内容，直到双方连接断开。</p><p>但在实际网 络应用中，客户端到服务器之间的通信往往需要穿越多个中间节点，例如路由器、网关、防火墙等，大部分防火墙默认会关闭长时间处于非活跃状态的连接而导致 Socket 连接断连，因此需要通过轮询告诉网络，该连接处于活跃状态。</p><h3 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h3><p>一个 HTTP 请求报文由请求行（request line）、请求头部（header）、空行和请求数据四部分组成</p><ol><li>第一行必须是一个请求行（request line），用来说明请求类型、要访问的资源以及所使用的 HTTP 版本</li><li>紧接着是一个头部（header）小节，用来说明服务器要使用的附加信息</li><li>之后是一个空行</li><li>再后面可以添加任意的其他数据（称之为主体：body）</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;method&gt; &lt;request-URL&gt; &lt;version&gt;</span><br><span class="line">&lt;headers&gt;</span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure><p>响应报文类似，</p><ol><li>状态行</li><li>响应报头</li><li>空行</li><li>响应数据</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;state&gt;</span><br><span class="line">&lt;headers&gt;</span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure><h1 id="HTTP特性"><a href="#HTTP特性" class="headerlink" title="HTTP特性"></a>HTTP特性</h1><h3 id="CORS跨域请求的限制与解决，预请求验证"><a href="#CORS跨域请求的限制与解决，预请求验证" class="headerlink" title="CORS跨域请求的限制与解决，预请求验证"></a>CORS跨域请求的限制与解决，预请求验证</h3><p>需服务器支持跨域</p><h3 id="缓存头"><a href="#缓存头" class="headerlink" title="缓存头"></a>缓存头</h3><p>Cache-Control，Expires，Last-Modified和Etag </p><h3 id="cookie和session"><a href="#cookie和session" class="headerlink" title="cookie和session"></a>cookie和session</h3><p><a href="https://juejin.im/post/5cd9037ee51d456e5c5babca" target="_blank" rel="noopener">cookie和session</a></p><h4 id="JWT"><a href="#JWT" class="headerlink" title="JWT"></a>JWT</h4><p>cookie和session可以实现有状态(服务端保存session)的用户认证，但是扩展性不好</p><p>JWT实现无状态(服务端不保存session)，从而容易实现扩展</p><h3 id="HTTP长连接"><a href="#HTTP长连接" class="headerlink" title="HTTP长连接"></a>HTTP长连接</h3><p>Keep-alive</p><p><a href="https://mp.weixin.qq.com/s/CpJ1mKA_i52pG4hEg-3AWw" target="_blank" rel="noopener">Keep-alive的应用</a></p><h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p><a href="https://mp.weixin.qq.com/s/StqqafHePlBkWAPQZg3NrA" target="_blank" rel="noopener">原理</a></p><p><a href="http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html" target="_blank" rel="noopener">实操</a></p><h1 id="HTTP2"><a href="#HTTP2" class="headerlink" title="HTTP2"></a>HTTP2</h1><p>[服务器推送](</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HTTP基础&quot;&gt;&lt;a href=&quot;#HTTP基础&quot; class=&quot;headerlink&quot; title=&quot;HTTP基础&quot;&gt;&lt;/a&gt;HTTP基础&lt;/h1&gt;&lt;h3 id=&quot;网络模型&quot;&gt;&lt;a href=&quot;#网络模型&quot; class=&quot;headerlink&quot; title=&quot;网
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="基础" scheme="https://iloverainbow.top/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="网络" scheme="https://iloverainbow.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis基础</title>
+    <link href="https://iloverainbow.top/2019/10/10/Redis%E5%9F%BA%E7%A1%80/"/>
+    <id>https://iloverainbow.top/2019/10/10/Redis基础/</id>
+    <published>2019-10-10T08:29:35.000Z</published>
+    <updated>2019-10-10T08:29:54.058Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="https://iloverainbow.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="基础" scheme="https://iloverainbow.top/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="数据库" scheme="https://iloverainbow.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL基础</title>
     <link href="https://iloverainbow.top/2019/10/10/MySQL%E5%9F%BA%E7%A1%80/"/>
     <id>https://iloverainbow.top/2019/10/10/MySQL基础/</id>
     <published>2019-10-10T06:57:39.000Z</published>
-    <updated>2019-10-10T07:08:12.855Z</updated>
+    <updated>2019-10-10T08:29:01.512Z</updated>
     
     <content type="html"><![CDATA[<p>整理自掘金小册《MySQL是怎样运行的》，还有<a href="https://juejin.im/post/5d351303f265da1bd30596f9#heading-4" target="_blank" rel="noopener">高频面试一百问</a>，<a href="https://juejin.im/post/5c6b9c09f265da2d8a55a855#heading-19" target="_blank" rel="noopener">MySQL优化面试</a>，<a href="https://juejin.im/post/5d1758d06fb9a07eed351405#heading-31" target="_blank" rel="noopener">MySQL重要知识点</a></p><p>图片都来自前者。</p><h1 id="一-索引"><a href="#一-索引" class="headerlink" title="一 索引"></a>一 索引</h1><h2 id="认识索引"><a href="#认识索引" class="headerlink" title="认识索引"></a>认识索引</h2><p>mysql按照记录的主键值从小到大，分页存储。记录之间组成单向链表，页之间组成双向列表。</p><p><code>主键查询</code>是在<code>页目录</code>中用二分法定位到页，然后在页中遍历到指定记录。</p><p>类似看书的时候查目录。</p><p><img src="https://user-gold-cdn.xitu.io/2019/4/9/16a01bd1b8eafbb4?imageslim" alt=""></p><p>不是主键也没有建立索引就是遍历查找所有记录。很慢，所以需要索引。</p><p>简单理解一下存储结构是下面这样</p><p><img src="https://user-gold-cdn.xitu.io/2019/4/9/16a01bd295fd42b5?imageslim" alt=""></p><p>上面那一页就是索引页，专门存放目录项记录</p><p>实际情况是下面这样，一棵B+树。实际记录都存放在B+树最底层的节点(叶子节点)上。</p><p>名字很奇怪的聚簇索引说的就是这(叶子节点是实际记录)，在<code>InnoDB</code>存储引擎中，<code>聚簇索引</code>就是数据的存储方式（所有的用户记录都存储在了<code>叶子节点</code>），也就是所谓的索引即数据，数据即索引。</p><p><img src="https://user-gold-cdn.xitu.io/2019/4/9/16a01bd2a6fb9126?imageslim" alt=""></p><p>上面是按照主键排列的，可以实现主键的快速查找。想要实现其他条件的快速查找就要重新排列了，这就是建索引。按照索引列排列，建一颗B+树。 不同的是，叶子节点不是真实记录，只有对应的主键值，所以需要去聚簇索引中再找一次。这个操作叫<strong>回表</strong>，以时间换空间。比聚簇索引(主键索引)多了一个回表操作，所以也叫<code>二级索引</code>(辅助索引)</p><h2 id="使用索引"><a href="#使用索引" class="headerlink" title="使用索引"></a>使用索引</h2><h4 id="建立索引"><a href="#建立索引" class="headerlink" title="建立索引"></a>建立索引</h4><p>高频查询字段适合建立索引</p><p>联合索引需要注意联合索引中的顺序.</p><h4 id="索引不生效的情况"><a href="#索引不生效的情况" class="headerlink" title="索引不生效的情况"></a>索引不生效的情况</h4><ol><li>使用不等于查询,</li><li>列参与了数学运算或者函数</li><li>在字符串like时左边是通配符.类似于’%aaa’.</li><li>当mysql分析全表扫描比使用索引快的时候不使用索引.</li><li>当使用联合索引,前面一个条件为范围查询,后面的即使符合最左前缀原则,也无法使用索引.</li></ol><h1 id="二-设计优化"><a href="#二-设计优化" class="headerlink" title="二 设计优化"></a>二 设计优化</h1><h5 id="使用自增主键"><a href="#使用自增主键" class="headerlink" title="使用自增主键"></a>使用自增主键</h5><p>没有主键也建议添加一个自增主键，新的记录会按顺序添加到前一个记录的后面</p><p>uuid写入近似于随机(因为是按照字符来排序的)，插来插曲效率低</p><h5 id="使用NOT-NULL"><a href="#使用NOT-NULL" class="headerlink" title="使用NOT NULL"></a>使用NOT NULL</h5><p>理由很多，不用就完事了</p><h5 id="定长比非定长查询效率高"><a href="#定长比非定长查询效率高" class="headerlink" title="定长比非定长查询效率高"></a>定长比非定长查询效率高</h5><h5 id="选择小的数据类型"><a href="#选择小的数据类型" class="headerlink" title="选择小的数据类型"></a>选择小的数据类型</h5><h5 id="注释写好点"><a href="#注释写好点" class="headerlink" title="注释写好点"></a>注释写好点</h5><h5 id="单表字段不宜过多"><a href="#单表字段不宜过多" class="headerlink" title="单表字段不宜过多"></a>单表字段不宜过多</h5><p>二三十个是极限了</p><h5 id="冗余字段"><a href="#冗余字段" class="headerlink" title="冗余字段"></a>冗余字段</h5><p>我倾向多一点冗余，减少连表查询，也不使用子查询</p><h1 id="三-查询优化"><a href="#三-查询优化" class="headerlink" title="三 查询优化"></a>三 查询优化</h1><h4 id="慢查询的原因"><a href="#慢查询的原因" class="headerlink" title="慢查询的原因"></a>慢查询的原因</h4><p>是查询条件没有命中索引?</p><p>是load了不需要的数据列?</p><p>还是数据量太大?</p><p>所以优化也是针对这三个方向来的,</p><ul><li>首先分析语句,看看是否load了额外的数据,可能是查询了多余的行并且抛弃掉了,可能是加载了许多结果中并不需要的列,对语句进行分析以及重写.</li><li>分析语句的执行计划,然后获得其使用索引的情况,之后修改语句或者修改索引,使得语句可以尽可能的命中索引.</li><li>如果对语句的优化已经无法进行,可以考虑表中的数据量是否太大,如果是的话可以进行横向或者纵向的分表.</li></ul><h1 id="四-事务"><a href="#四-事务" class="headerlink" title="四 事务"></a>四 事务</h1><p>事务的英文是transaction，其实本义是交易，买卖的意思。事务不够直观</p><p>需要符合AICD特性的一个或多个数据库操作称为<code>事务</code></p><p>A atomicity 原子性：不可分割，要么做要么不做，不存在中间状态</p><p>I isolation 隔离性：本次操作不受其他操作影响</p><p>C consistency 一致性：符合现实世界的约束，比如你在银行里只有5块钱，不可能取出6块钱来</p><p>D durability 持久性：操作产生的状态转换是稳定的</p><h4 id="事务的状态"><a href="#事务的状态" class="headerlink" title="事务的状态"></a>事务的状态</h4><p>1 活动的（active）</p><p>操作正在执行</p><p>2 部分提交的（partially committed）</p><p>最后一个操作执行完成，刷新到磁盘前</p><p>3 失败的（failed）</p><p>1或2执行失败后</p><p>4 中止的（aborted）</p><p>失败之后需要<code>回滚</code> ，回滚后</p><p>5 提交的（committed）</p><p>2提交成功后</p><p><img src="https://user-gold-cdn.xitu.io/2019/4/1/169d7fd5bd4ce2f1?imageslim" alt=""></p><p>还没用到，写支付的时候再来吧</p><h1 id="五-锁"><a href="#五-锁" class="headerlink" title="五 锁"></a>五 锁</h1><p>有并发事务的时候通过锁来保证访问的次序。</p><p>需要的时候再来吧。</p><h1 id="六-其他"><a href="#六-其他" class="headerlink" title="六 其他"></a>六 其他</h1><h3 id="explain"><a href="#explain" class="headerlink" title="explain"></a>explain</h3><p>小册总结得很好，就不copy了</p>]]></content>
     
@@ -100,7 +147,7 @@
     <published>2018-08-09T03:35:09.000Z</published>
     <updated>2019-10-10T08:22:10.085Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ps -a| grep name</span><br><span class="line"><span class="meta">#</span> 查看指定程序的进程id</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>用于显示tcp，udp的端口和进程等相关情况</span><br><span class="line">netstat -tunlp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 切换用户</span><br><span class="line">su name</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ps -a| grep name</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看指定程序的进程id</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">用于显示tcp，udp的端口和进程等相关情况</span></span><br><span class="line">netstat -tunlp</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换用户</span></span><br><span class="line">su name</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -444,59 +491,6 @@
       
         &lt;h1 id=&quot;基本定义&quot;&gt;&lt;a href=&quot;#基本定义&quot; class=&quot;headerlink&quot; title=&quot;基本定义&quot;&gt;&lt;/a&gt;基本定义&lt;/h1&gt;&lt;p&gt;这里有一段很好的关于架构的讲述，就不完整的抄了&lt;/p&gt;
 &lt;p&gt;架构有两层含义，静态的和动态的。静态层面主要勾画系统边界、结构
-      
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>共识算法详解</title>
-    <link href="https://iloverainbow.top/2018/05/26/%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://iloverainbow.top/2018/05/26/共识算法详解/</id>
-    <published>2018-05-26T12:14:43.000Z</published>
-    <updated>2018-06-29T10:07:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>共识算法的结果，确定一个在一段时间内拥有记账权的唯一节点</p><p>共识算法的假设条件有以下几种，</p><ol><li>故障模型： 非拜占庭故障/拜占庭故障</li><li>通信模型： 同步/异步</li><li>通信网络连接： 节点间直连数</li><li>信息发送者身份： 实名/匿名</li><li>通信通道稳定性： 通道可靠/不可靠</li><li>消息认证性： 认证消息/非认证消息</li></ol><p>由于应用场景的不同，所设计的目标各异，不同的区块链系统采用了不同的共识算法。一般来说，私有链和联盟链对一致性、正确性要求更高，一般采用强一致性的共识算法。公有链对一致性和正确性通常没法做到百分之百，通常采用最终一致性Eventual Consistency的共识算法。</p><h1 id="拜占庭容错技术"><a href="#拜占庭容错技术" class="headerlink" title="拜占庭容错技术"></a>拜占庭容错技术</h1><h3 id="拜占庭将军问题"><a href="#拜占庭将军问题" class="headerlink" title="拜占庭将军问题"></a>拜占庭将军问题</h3><h3 id="拜占庭容错系统"><a href="#拜占庭容错系统" class="headerlink" title="拜占庭容错系统"></a>拜占庭容错系统</h3><h3 id="实用的拜占庭容错系统"><a href="#实用的拜占庭容错系统" class="headerlink" title="实用的拜占庭容错系统"></a>实用的拜占庭容错系统</h3><h3 id="Raft协议"><a href="#Raft协议" class="headerlink" title="Raft协议"></a>Raft协议</h3><h5 id="Raft基础"><a href="#Raft基础" class="headerlink" title="Raft基础"></a>Raft基础</h5><h5 id="leader选举"><a href="#leader选举" class="headerlink" title="leader选举"></a>leader选举</h5><h5 id="记账过程"><a href="#记账过程" class="headerlink" title="记账过程"></a>记账过程</h5><h1 id="PoW"><a href="#PoW" class="headerlink" title="PoW"></a>PoW</h1><p>一句话解释，根据投入的算力来选择记账节点</p><p>会导致算力浪费</p><p>穷举法找到一个符合要求的哈希值。</p><h3 id="工作量证明函数"><a href="#工作量证明函数" class="headerlink" title="工作量证明函数"></a>工作量证明函数</h3><h3 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h3><h3 id="难度值"><a href="#难度值" class="headerlink" title="难度值"></a>难度值</h3><h3 id="PoW的过程"><a href="#PoW的过程" class="headerlink" title="PoW的过程"></a>PoW的过程</h3><h3 id="基于PoW的共识记账"><a href="#基于PoW的共识记账" class="headerlink" title="基于PoW的共识记账"></a>基于PoW的共识记账</h3><h3 id="关于比特币PoW能否解决拜占庭将军的问题"><a href="#关于比特币PoW能否解决拜占庭将军的问题" class="headerlink" title="关于比特币PoW能否解决拜占庭将军的问题"></a>关于比特币PoW能否解决拜占庭将军的问题</h3><h1 id="PoS"><a href="#PoS" class="headerlink" title="PoS"></a>PoS</h1><p>一句话解释，根据拥有的货币数量来算则记账节点</p><p>会导致中心化</p><p>用户证明拥有某些数量的货币(即对货币的权益)</p><h3 id="PoS的应用"><a href="#PoS的应用" class="headerlink" title="PoS的应用"></a>PoS的应用</h3><p>点点币结合币龄</p><h3 id="随机区块选择"><a href="#随机区块选择" class="headerlink" title="随机区块选择"></a>随机区块选择</h3><p>NXT和blackcoin采用随机方法预测下一合法区块，使用公式查找与权益大小结合的最小哈希值</p><h3 id="基于权益速度的选择"><a href="#基于权益速度的选择" class="headerlink" title="基于权益速度的选择"></a>基于权益速度的选择</h3><p>Reddcoin引入权益速度证明，即鼓励钱币的流动而非囤积。通过给币龄引入指数衰减函数，使得币龄不会超过2币月</p><h1 id="DPoS"><a href="#DPoS" class="headerlink" title="DPoS"></a>DPoS</h1><p>股份授权证明机制 Delegated Proof of Stake,期望通过引入一个技术民主层来减少中心化的负面影响</p><p>持股人投票选出见证人。见证人按序生成区块。</p><h1 id="Ripple共识算法"><a href="#Ripple共识算法" class="headerlink" title="Ripple共识算法"></a>Ripple共识算法</h1><p>基于互联网的开源支付协议，可以实现去中心化的货币兑换、支付与清算功能。</p><p>参与投票节点的身份是事先知道的，因此算法的效率比PoW高，交易的确认只需要几秒钟。<br>这点也决定了它只适合权限链。</p><p>容忍20%的拜占庭错误</p><h3 id="Ripple的网络结构"><a href="#Ripple的网络结构" class="headerlink" title="Ripple的网络结构"></a>Ripple的网络结构</h3><h3 id="Ripple共识算法-1"><a href="#Ripple共识算法-1" class="headerlink" title="Ripple共识算法"></a>Ripple共识算法</h3><h1 id="小蚁共识机制"><a href="#小蚁共识机制" class="headerlink" title="小蚁共识机制"></a>小蚁共识机制</h1><p>PoW、PoS、DPoS确定谁有记账权。小蚁侧重于解决如何限制记账人权利的问题。这种记账机制被称为中性记账。记账人只有选择是否参加的权利，而不能改变交易数据，不能认为排除某笔交易，也不能对交易排序。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>PoW安全性和公平性强一些。PoS和DPoS更环保高效。</p><p>PoW和PoS比较适合公共链环境，PBFT和Raft适合联盟链和私有链的分布式环境。</p><p>比特币的PoW机制是一种概念性的拜占庭协议，能在一定程度上解决拜占庭问题，而PoS等其他机制 并没有严格分析其在拜占庭协议方面的属性。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;共识算法的结果，确定一个在一段时间内拥有记账权的唯一节点&lt;/p&gt;
-&lt;p&gt;共识算法的假设条件有以下几种，&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;故障模型： 非拜占庭故障/拜占庭故障&lt;/li&gt;
-&lt;li&gt;通信模型： 同步/异步&lt;/li&gt;
-&lt;li&gt;通信网络连接： 节点间直连数&lt;/li&gt;
-&lt;li
-      
-    
-    </summary>
-    
-      <category term="区块链" scheme="https://iloverainbow.top/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>以太坊笔记</title>
-    <link href="https://iloverainbow.top/2018/05/25/%E4%BB%A5%E5%A4%AA%E5%9D%8A/"/>
-    <id>https://iloverainbow.top/2018/05/25/以太坊/</id>
-    <published>2018-05-25T10:12:03.000Z</published>
-    <updated>2018-06-29T10:07:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>以太坊有账户的概念，可以实时查看指定地址的账户情况和交易状态。<br>比特币没有账户的概念，只有UTXO。需要计算。</p><h1 id="以太坊架构"><a href="#以太坊架构" class="headerlink" title="以太坊架构"></a>以太坊架构</h1><p>智能合约部署在以太坊虚拟机上，通过虚拟机和RPC接口和底层区块链进行交互</p><p>核心理念是把区块链作为一个可编程的分布式信用基础设施，支撑智能合约应用。</p><h3 id="账户设计"><a href="#账户设计" class="headerlink" title="账户设计"></a>账户设计</h3><p>两种账户。外部所有账户EOA和合约账户。</p><p>以太坊的设计是将区块链作为一个通用的管理对象状态的去中心化平台，账户就是有状态的对象。</p><p>合约账户可以执行图灵完备的计算任务，也可在合约账户之间传递消息，合约编译成EVM字节码。并记录在区块链上。</p><h3 id="区块链设计"><a href="#区块链设计" class="headerlink" title="区块链设计"></a>区块链设计</h3><p>Merkle Patricia树</p><h3 id="PoW机制"><a href="#PoW机制" class="headerlink" title="PoW机制"></a>PoW机制</h3><p>Ethash工作量证明机制加入内存难度，使得它具有抵抗单凭哈希运算优化的ASIC挖矿机的属性。每30000个区块需要一个全新的DAG，有向无环图。</p><h3 id="计算和图灵完备"><a href="#计算和图灵完备" class="headerlink" title="计算和图灵完备"></a>计算和图灵完备</h3><h3 id="EVM高级语言"><a href="#EVM高级语言" class="headerlink" title="EVM高级语言"></a>EVM高级语言</h3><h3 id="以太坊P2P网络"><a href="#以太坊P2P网络" class="headerlink" title="以太坊P2P网络"></a>以太坊P2P网络</h3><p>节点间使用RLPx协议，Dapp间用Whisper协议</p><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>合约是在区块验证的时候被交易触发。以太坊中的事件是一个以太坊日志和事件监测的协议的抽象。事件利用现有的ABI功能来解析日志记录。</p><h1 id="以太坊技术"><a href="#以太坊技术" class="headerlink" title="以太坊技术"></a>以太坊技术</h1><h3 id="以太坊核心概念"><a href="#以太坊核心概念" class="headerlink" title="以太坊核心概念"></a>以太坊核心概念</h3><h5 id="EVM"><a href="#EVM" class="headerlink" title="EVM"></a>EVM</h5><p>由许多互联的计算机组成。程序按照EVM定义的方式运行在其上。任何人都可以为所有权、交易格式和状态转换函数创建商业逻辑</p><h5 id="账户"><a href="#账户" class="headerlink" title="账户"></a>账户</h5><p>两类账户，公用一个空间地址。</p><p>外部账户，被密钥对控制。外部账户没有代码。用户通过创建和签名一笔交易从一个外部账户发送信息。</p><p>合约账户，被存储在账户中的代码控制。每当合约账户收到一条消息，合约内部的代码就会被激活，允许它对内部存储进行读取、写入、发送其他消息和创建合约。</p><p>以太坊的账户包含四个部分</p><ol><li>随机数，用于确定每笔交易只能被处理一次的计数器</li><li>账户目前的以太币余额</li><li>账户的合约代码（如果有的话）</li><li>账户的存储（默认为空）</li></ol><h5 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h5><p>类似于比特币的交易，主要有3点不同：</p><ol><li>以太坊的消息可以由外部实体或者合约创建，比特币的交易只能从外部创建</li><li>以太坊消息可以选择包含数据</li><li>如果消息的接受者是合约账户，可以选择进行回应，这意味着以太坊消息也包含函数概念</li></ol><h5 id="交易"><a href="#交易" class="headerlink" title="交易"></a>交易</h5><p>指存储从外部账户发出的消息的签名数据包。<br>交易包含：</p><ol><li>消息的接受者</li><li>用于确认发送者的签名</li><li>以太币账户余额</li><li>要发送的数据</li><li>STARTGAS，通过需要支付的燃料来对计算步骤进行限制</li><li>GASPRICE，每一计算步骤需要支付给矿工的燃料</li></ol><h5 id="Gas"><a href="#Gas" class="headerlink" title="Gas"></a>Gas</h5><p>每笔交易都会被收取一定数量的Gas，其目的是限制交易执行所需要的工作量，同时为交易的执行支付费用。</p><h5 id="存储、主存和栈"><a href="#存储、主存和栈" class="headerlink" title="存储、主存和栈"></a>存储、主存和栈</h5><p>每个账户都有一块永久内存区域，成为存储，key-value形式。存储的读写开销比主存和栈大。合约只能对自己的存储进行读写。</p><p>第二个内存区叫主存，合约执行每次消息调用时都有一块新的被清除过的主存。</p><p>EVM不是基于寄存器的，而是基于栈的虚拟机。因此所有的计算都在一个被称为栈的区域内执行。</p><h5 id="指令集"><a href="#指令集" class="headerlink" title="指令集"></a>指令集</h5><p>EVM指令集被可以保持在最小规模，以尽可能的避免可能导致共识问题的而错误。所有的指令都是针对256位这个基本的数据单位进行的操作，具备常用的算术、位、逻辑和比较操作还有条件跳转和无条件跳转。</p><p>此外，合约可以访问当前区块的相关属性，比如它的编号和时间戳。</p><h5 id="消息调用"><a href="#消息调用" class="headerlink" title="消息调用"></a>消息调用</h5><p>合约通过消息调用的方式来调用其他合约，或者发送以太币到非合约账户。消息调用和交易非常类似，它们都有一个源，目标，数据负载，以太币，Gas和返回数据。</p><p>事实上每个交易都可以被认为是一个顶层消息调用，这个消息调用会一次产生更多的消息调用。</p><h5 id="代码调用和库"><a href="#代码调用和库" class="headerlink" title="代码调用和库"></a>代码调用和库</h5><p>callcode是一种特殊的消息调用。加载来自目标地址的代码将在发起调用的合约上下文中运行。用来实现库。</p><h3 id="以太坊状态转换"><a href="#以太坊状态转换" class="headerlink" title="以太坊状态转换"></a>以太坊状态转换</h3><p>一个交易发生时，从一个状态转换到下一个状态</p><h3 id="以太坊客户端"><a href="#以太坊客户端" class="headerlink" title="以太坊客户端"></a>以太坊客户端</h3><p>go语言客户端Geth</p><p>客户端浏览器Mist</p><h1 id="以太坊智能合约"><a href="#以太坊智能合约" class="headerlink" title="以太坊智能合约"></a>以太坊智能合约</h1><h3 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h3><p>由尼克萨博提出，几乎与互联网同龄。但一直没有可信的执行环境，以太坊首先实现了区块链和智能合约的完整契合。</p><p>以太坊这方面的特性有：</p><ol><li>图灵完备性</li><li>价值意识(value-awareness)</li><li>区块链意识(blockchain-awareness)</li><li>多状态<h3 id="开发语言"><a href="#开发语言" class="headerlink" title="开发语言"></a>开发语言</h3>以太坊有四种专用语言：</li><li>Serpent(Python)</li><li>Solidity(Js)</li><li>Mutan(Go)</li><li>LLL(Lisp)</li></ol><p>图灵完备，可以解决所有的计算问题。但是半图灵完备，因为通过对计算量设置上限来避免图灵完备语言的无法停机的问题。</p><h3 id="代码执行"><a href="#代码执行" class="headerlink" title="代码执行"></a>代码执行</h3><p>以太坊合约的代码是使用低级的基于堆栈的字节码的语言写成的。可以访问三种存储空间。</p><ol><li>堆栈</li><li>内存，可无限扩展的字节队列</li><li>合约的长期存储，一个秘钥/数值的存储<br>堆栈与内存计算结束就重置，长期存储会保持。<h1 id="以太坊的去中心化应用"><a href="#以太坊的去中心化应用" class="headerlink" title="以太坊的去中心化应用"></a>以太坊的去中心化应用</h1><h3 id="什么是Dapp"><a href="#什么是Dapp" class="headerlink" title="什么是Dapp"></a>什么是Dapp</h3>Dapp由智能合约和客户端代码构成。类似于后端和前端。智能合约跑在区块链上。</li></ol><h3 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;以太坊有账户的概念，可以实时查看指定地址的账户情况和交易状态。&lt;br&gt;比特币没有账户的概念，只有UTXO。需要计算。&lt;/p&gt;
-&lt;h1 id=&quot;以太坊架构&quot;&gt;&lt;a href=&quot;#以太坊架构&quot; class=&quot;headerlink&quot; title=&quot;以太坊架构&quot;&gt;&lt;/a&gt;以太坊架构
       
     
     </summary>
