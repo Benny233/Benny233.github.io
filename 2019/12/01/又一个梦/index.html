@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>区块链中的密码学技术 | Benny&#39;s Notebook</title>
+  <title>又一个梦 | Benny&#39;s Notebook</title>
   <meta name="keywords" content="">
-  <meta name="description" content="区块链中的密码学技术 | Benny&#39;s Notebook">
+  <meta name="description" content="又一个梦 | Benny&#39;s Notebook">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="gallery">
@@ -539,9 +539,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-区块链中的密码学技术" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-又一个梦" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">区块链中的密码学技术</h1>
+        <h1 class="article-title">又一个梦</h1>
     
     <div class="article-meta">
         
@@ -549,7 +549,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="区块链">区块链</a>
+                <a href="javascript:" data-rel="写作">写作</a>
             
         </span>
         
@@ -557,7 +557,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2018-06-29 18:10:30'>2018-06-29 18:10</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-01 16:33:34'>2019-12-01 17:51</time>
         
     </div>
     <div class="article-meta">
@@ -579,7 +579,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#哈希算法"><span class="toc-text">哈希算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希算法的性质与应用"><span class="toc-text">哈希算法的性质与应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#抗碰撞性"><span class="toc-text">抗碰撞性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#原像不可逆"><span class="toc-text">原像不可逆</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#难题友好性"><span class="toc-text">难题友好性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#哈希指针链"><span class="toc-text">哈希指针链</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Merkle树"><span class="toc-text">Merkle树</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公钥密码算法"><span class="toc-text">公钥密码算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#椭圆曲线密码算法"><span class="toc-text">椭圆曲线密码算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#secp256k1椭圆曲线"><span class="toc-text">secp256k1椭圆曲线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#椭圆曲线签名与验证签名"><span class="toc-text">椭圆曲线签名与验证签名</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -595,17 +595,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h1><p>一类数学函数，在有限合理的时间内，将任意长度的消息压缩为固定长度的二进制串，其输出值成为哈希值。长用于实现数据完整性和实体认证。</p>
-<p>在比特币系统中，基于寻找给定前缀的SHA256哈希值，设计了工作量证明的共识机制</p>
-<h3 id="哈希算法的性质与应用"><a href="#哈希算法的性质与应用" class="headerlink" title="哈希算法的性质与应用"></a>哈希算法的性质与应用</h3><h5 id="抗碰撞性"><a href="#抗碰撞性" class="headerlink" title="抗碰撞性"></a>抗碰撞性</h5><p>就是 两个信息具有相同的哈希值是不可能的</p>
-<h5 id="原像不可逆"><a href="#原像不可逆" class="headerlink" title="原像不可逆"></a>原像不可逆</h5><p>不能根据哈希值推导出原值</p>
-<h5 id="难题友好性"><a href="#难题友好性" class="headerlink" title="难题友好性"></a>难题友好性</h5><p>没有便捷的方式去产生一个特定要求的哈希值，只能穷举。</p>
-<h3 id="哈希指针链"><a href="#哈希指针链" class="headerlink" title="哈希指针链"></a>哈希指针链</h3><p>用于验证信息是否发生改变。区块链可以看做一类使用哈希指针的链表。</p>
-<h1 id="Merkle树"><a href="#Merkle树" class="headerlink" title="Merkle树"></a>Merkle树</h1><p>一类基于哈希值的二叉树或多叉树。<br>区块链中的Merkle树是二叉树，用于存储交易信息。</p>
-<p>叶子： 数据块的哈希值</p>
-<p>节点： 孩子节点的哈希值</p>
-<p>用于检测数据副本的一致性，以减少传输的数据量。</p>
-<h1 id="公钥密码算法"><a href="#公钥密码算法" class="headerlink" title="公钥密码算法"></a>公钥密码算法</h1><h3 id="椭圆曲线密码算法"><a href="#椭圆曲线密码算法" class="headerlink" title="椭圆曲线密码算法"></a>椭圆曲线密码算法</h3><h3 id="secp256k1椭圆曲线"><a href="#secp256k1椭圆曲线" class="headerlink" title="secp256k1椭圆曲线"></a>secp256k1椭圆曲线</h3><h3 id="椭圆曲线签名与验证签名"><a href="#椭圆曲线签名与验证签名" class="headerlink" title="椭圆曲线签名与验证签名"></a>椭圆曲线签名与验证签名</h3><p>先放一放，现在不感兴趣。等需要的时候再来学</p>
+        <p>昨晚又多梦，其中一个是便携飞行器带着我在一个大工地里飞行。飞行器结构简洁，下面是圆柱状的手柄，上面是个小圆盘。和以往的飞行梦一样，我有点恐高。虽然很想飞高，但是不敢。工地上面垂下来很多线，我在这些线里小心翼翼的穿行，担心撞到工人或者其他。怕被骂。</p>
+<p>从大工地飞出来一会儿就是一条弯曲的小河。从视野的左上方流入，在视野的中间拐一个大弯，再从视野的右上方流出。于是，我的梦里有了一个河湾，以及河两岸大片绿油油的菜园。</p>
+<p>河湾突出的地方有一片干净细腻的沙滩，沙滩的边缘静谧地矗立着五座高矮不一蓝顶的白塔。塔身释放着柔和、梦幻的氛围，像古朴通透的玉。看到它的瞬间，我知道了它的名字，小蓝帽。</p>
+<p>美好的景色就在眼前，关键我还能飞，那我肯定要飞到河面上去静静的感受、呼吸这美好。刚好前面有三个女生也要去，于是我们同行赏景。景色更美了。</p>
+<p>把梦写下来的时候想起白塔从哪里来了。睡前看的书里提到，1891年芝加哥举办世界博览会，为此新建的建筑群叫做白城。它的墙面涂有黄麻纤维灰浆，干燥后酷似白色的大理石。</p>
+<p>“成千上万参观白城的美国人自豪地感到，美国文化已经成年。它们正向世界表明，尽管美国文明乳臭未干，犹如吵吵闹闹的毛头小伙子，美国人照样有对永恒之美的憧憬”</p>
+<p>这段在书的第一章，看完我就关灯准备睡了。可是最近睡眠习惯被我搅乱了，睡不着，于是我起来又跳着看了最后一章。它总结道，“1890年代的作家做了他们的工作，尽管他们做完了就都悄然逝去。这就是，他们开始使美国习惯于下列事实：一是，内在的分裂要比地理上的分裂来得大；二是，一种致力于商业和技术的文明为它自身建立了一种源自商业和技术的道德观；三是，性体验是普通人类环境的一个基本部分，而不是各种既定社会制度中一个讳莫如深的部分。”</p>
+<p>这段总结触动我的地方之一是它的第三点，美国人在一百多年前就能够把性体验作为生活的一个基本部分加以讨论，而我到现在对性还处于一种迷惑、矛盾的状态中。在中文互联网的各个角落里，有很多大胆刺激的性体验的描述，健康的、扭曲的、有爱的、背德的，很多很多。而在公共舆论环境里呢，每次明星出轨都能掀起全网的关注。</p>
+<p>可能这也和政府的互联网管制策略有关，你们在网上就讨论下明星花边吧，不能讨论的东西就不要说了。看完花边继续为房子奋斗，你们不奋斗，怎么实现我的中国梦。微博，热搜能够花钱买，也能花钱撤。百度，什么都能竞价排名。华为，加班加到死。阿里，996是一种福报。为什么是福报呢，因为你不愿意996，大把的人愿意。</p>
+<p>员工在公司面前很渺小，公司在政府面前也很渺小。写到这里我才想起来，我身处社会主义</p>
 
       
        
@@ -615,12 +614,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>区块链中的密码学技术</p>
+    <p><span class="copy-title">文章标题:</span>又一个梦</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Benny">Benny</a></p>
-    <p><span class="copy-title">发布时间:</span>2018-06-29, 18:10:10</p>
-    <p><span class="copy-title">最后更新:</span>2018-06-29, 18:10:30</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2018/06/29/区块链中的密码学技术/" title="区块链中的密码学技术">https://iloverainbow.top/2018/06/29/区块链中的密码学技术/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-01, 17:51:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-01, 16:33:34</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/01/又一个梦/" title="又一个梦">https://iloverainbow.top/2019/12/01/又一个梦/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
