@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>TDD笔记 | Benny&#39;s Notebook</title>
+  <meta name="keywords" content>
+  <meta name="description" content="TDD笔记 | Benny&#39;s Notebook">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="gallery">
+<meta property="og:url" content="https://benny233.github.io/gallery/index.html">
+<meta property="og:site_name" content="Benny&#39;s Notebook">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-06T10:04:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gallery">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Benny</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/Benny233" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:liubenyi2333@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(34)</small></div></li>
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链">区块链<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="技术">技术<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="手册">手册<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="写作">写作<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="综合能力">综合能力<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="周打卡">周打卡<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="产品">产品<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="34">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">CSS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">HTML</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="运维 "
+           href="/2020/06/08/Docker笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker笔记">Docker笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:32">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/Fabric基础笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Fabric基础笔记">Fabric基础笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:32">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2019/10/14/HTTP基础/"
+           data-tag="基础,网络"
+           data-author="" >
+            <span class="post-title" title="HTTP基础">HTTP基础</span>
+            <span class="post-date" title="2019-10-14 11:43:22">2019/10/14</span>
+        </a>
+        
+        <a  class="手册 "
+           href="/2020/06/08/Linux命令手册/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux常用命令">Linux常用命令</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2019/10/10/MySQL基础/"
+           data-tag="基础,数据库"
+           data-author="" >
+            <span class="post-title" title="MySQL基础">MySQL基础</span>
+            <span class="post-date" title="2019-10-10 14:57:39">2019/10/10</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/08/Nginx笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx笔记">Nginx笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2019/10/10/Redis基础/"
+           data-tag="基础,数据库"
+           data-author="" >
+            <span class="post-title" title="Redis基础">Redis基础</span>
+            <span class="post-date" title="2019-10-10 16:29:35">2019/10/10</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/TDD笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TDD笔记">TDD笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/11/04/css基础/"
+           data-tag="基础,CSS"
+           data-author="" >
+            <span class="post-title" title="css基础">css基础</span>
+            <span class="post-date" title="2019-11-04 14:50:28">2019/11/04</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/cs总结/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cs总结">cs总结</span>
+            <span class="post-date" title="2020-06-08 19:49:32">2020/06/08</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/11/04/html基础/"
+           data-tag="基础,HTML"
+           data-author="" >
+            <span class="post-title" title="html基础">html基础</span>
+            <span class="post-date" title="2019-11-04 14:48:47">2019/11/04</span>
+        </a>
+        
+        <a  class="手册 "
+           href="/2020/06/08/iterm手册/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="iterm快捷键总结">iterm快捷键总结</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/08/makefile手册/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Makefile笔记">Makefile笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/以太坊/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="以太坊笔记">以太坊笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/共识算法详解/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="共识算法详解">共识算法详解</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/区块链/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链基础知识">区块链基础知识</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/区块链中的密码学技术/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链中的密码学技术">区块链中的密码学技术</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/区块链架构/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链架构">区块链架构</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="写作 "
+           href="/2019/12/03/又一个梦/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="又一个梦">又一个梦</span>
+            <span class="post-date" title="2019-12-03 10:51:47">2019/12/03</span>
+        </a>
+        
+        <a  class="写作 "
+           href="/2019/12/04/双一个梦/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="双一个梦">双一个梦</span>
+            <span class="post-date" title="2019-12-04 10:51:47">2019/12/04</span>
+        </a>
+        
+        <a  class="综合能力 "
+           href="/2020/06/08/合作的进化/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="合作的进化">合作的进化</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="周打卡 "
+           href="/2019/06/04/周打卡1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="周打卡-1">周打卡-1</span>
+            <span class="post-date" title="2019-06-04 17:51:47">2019/06/04</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/基础数据结构/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基础数据结构">基础数据结构</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/敏捷编码/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="敏捷编码">敏捷编码</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/智能合约基础笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="智能合约基础笔记">智能合约基础笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="写作 "
+           href="/2019/12/01/有一个梦/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="有一个梦">有一个梦</span>
+            <span class="post-date" title="2019-12-01 17:51:47">2019/12/01</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2020/06/08/用户调研思考/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用户调研思考">用户调研思考</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/比特币/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="比特币基础知识">比特币基础知识</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2020/06/08/用研笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用研笔记">用研笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/算法笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="算法笔记">算法笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2020/06/08/设计需求分析与方案选择/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计需求分析与方案选择">设计需求分析与方案选择</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/08/部署流程/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="部署流程">部署流程</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2019/10/05/阿里云效搭建单机自动化部署系统/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="阿里云效搭建单机自动化部署系统">阿里云效搭建单机自动化部署系统</span>
+            <span class="post-date" title="2019-10-05 00:24:29">2019/10/05</span>
+        </a>
+        
+        <a  class="综合能力 "
+           href="/2020/06/08/非暴力沟通/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="非暴力沟通">非暴力沟通</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-TDD笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">TDD笔记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="技术">技术</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-10-09 18:43:06'>2020-06-08 19:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#自己写测试的心得"><span class="toc-text">自己写测试的心得</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在egg中写测试"><span class="toc-text">在egg中写测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步，编写测试"><span class="toc-text">第一步，编写测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础讲解"><span class="toc-text">基础讲解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二步-配置测试"><span class="toc-text">第二步 配置测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三步-启动测试"><span class="toc-text">第三步 启动测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TDD是什么"><span class="toc-text">TDD是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TDD的核心"><span class="toc-text">TDD的核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要测试，什么时候测试"><span class="toc-text">为什么要测试，什么时候测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试的概念"><span class="toc-text">测试的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试效果的指标"><span class="toc-text">测试效果的指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试的误区"><span class="toc-text">测试的误区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试的工具"><span class="toc-text">测试的工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mocha"><span class="toc-text">mocha</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#describe"><span class="toc-text">describe</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#it"><span class="toc-text">it</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#supertest"><span class="toc-text">supertest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node自带断言库-assert"><span class="toc-text">node自带断言库 assert</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何写好测试"><span class="toc-text">如何写好测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TDD和时间的关系"><span class="toc-text">TDD和时间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TDD的好处"><span class="toc-text">TDD的好处</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TDD教程"><span class="toc-text">TDD教程</span></a>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">需求提出--&gt;抽象出模型</span><br><span class="line">抽象出模型--&gt;转化出测试用例</span><br><span class="line">转化出测试用例--&gt;TDD:定义接口测试接口</span><br><span class="line">抽象出模型--&gt;|not TDD|code</span><br><span class="line">TDD:定义接口测试接口--&gt;提交PR并讨论</span><br><span class="line">提交PR并讨论--&gt;code</span><br><span class="line">code --&gt;整合</span><br></pre></td></tr></table></figure>
+<h2 id="自己写测试的心得"><a href="#自己写测试的心得" class="headerlink" title="自己写测试的心得"></a>自己写测试的心得</h2><p>普通写代码就是直接撸，写成啥是啥，错了就改<br>正确的写测试就是  先想好接口，根据接口来写测试用例，最后再写代码去通过测试<br>这就叫谋而后动</p>
+<p>今天跟了一个测试教程<br>学会了测试语言describe it   before after(mocha)  expect(supettest)</p>
+<h2 id="在egg中写测试"><a href="#在egg中写测试" class="headerlink" title="在egg中写测试"></a>在egg中写测试</h2><p>这是应用的单元测试，不是插件和框架的单元测试</p>
+<p>内置的egg-bin模块，这个模块已经内置了所有测试所需要的好用的模块。<br>包括：Mocha、co-mocha、power-assert，istanbul<br>测试mock辅助模块egg-mock</p>
+<h3 id="第一步，编写测试"><a href="#第一步，编写测试" class="headerlink" title="第一步，编写测试"></a>第一步，编写测试</h3><h4 id="基础讲解"><a href="#基础讲解" class="headerlink" title="基础讲解"></a>基础讲解</h4><h3 id="第二步-配置测试"><a href="#第二步-配置测试" class="headerlink" title="第二步 配置测试"></a>第二步 配置测试</h3><p>在==package.json==中配置==script.test==<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"scripts"</span>:&#123;</span><br><span class="line">        <span class="string">"test"</span>:<span class="string">"egg-bin test"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="第三步-启动测试"><a href="#第三步-启动测试" class="headerlink" title="第三步 启动测试"></a>第三步 启动测试</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm test</span><br></pre></td></tr></table></figure>
+<p><a href="https://zhuanlan.zhihu.com/p/24997923" target="_blank" rel="noopener">打开TDD的正确姿势</a></p>
+<h2 id="TDD是什么"><a href="#TDD是什么" class="headerlink" title="TDD是什么"></a>TDD是什么</h2><p>tested dirven development,测试驱动开发</p>
+<h2 id="TDD的核心"><a href="#TDD的核心" class="headerlink" title="TDD的核心"></a>TDD的核心</h2><p>做好需求分析和设计，将==需求==拆解</p>
+<h2 id="为什么要测试，什么时候测试"><a href="#为什么要测试，什么时候测试" class="headerlink" title="为什么要测试，什么时候测试"></a>为什么要测试，什么时候测试</h2><p>因为错误不可避免，要排除错误减少损失<br>测试越早越好，因为错误绝大部分错误是在早期引入的，发现在中后期<br>错误造成的损失随着时间呈现指数级的增长，越早发现，成本越低。这是软件测试的作用</p>
+<p>测试驱动开发的作用：测试是根据需求来的，测试用例就是各个需求点，只要通过测试，模块的行为就能确保正确。在修改的时候做测试也能确保没有修改出错误。</p>
+<h2 id="测试的概念"><a href="#测试的概念" class="headerlink" title="测试的概念"></a>测试的概念</h2><p><strong>单元测试</strong>：用来对一个模块、一个函数或者一个类来进行正确性检验的测试工作。就是该部分能否正常工作</p>
+<p> <strong>测试用例</strong>：进行单元测试使用的例子</p>
+<p>单元测试不通过说明要么有bug，要么测试用例不正确</p>
+<p>测试正确说明，对该函数的修改没有对原来的行为造成影响。</p>
+<p>测试驱动，是测试的什么？<br>测试个模块的接口<br>检验是否满足规定的需求，找出与预期的差异</p>
+<h2 id="测试效果的指标"><a href="#测试效果的指标" class="headerlink" title="测试效果的指标"></a>测试效果的指标</h2><p>提高测试覆盖率，测试效率</p>
+<h2 id="测试的误区"><a href="#测试的误区" class="headerlink" title="测试的误区"></a>测试的误区</h2><p>盲目追求覆盖率</p>
+<h2 id="测试的工具"><a href="#测试的工具" class="headerlink" title="测试的工具"></a>测试的工具</h2><h3 id="mocha"><a href="#mocha" class="headerlink" title="mocha"></a>mocha</h3><p>mocha是JavaScript的一种单元测试框架，既可以在浏览器环境下运行，也可以在Node.js环境下运行。</p>
+<p>使用mocha，我们就只需要专注于编写单元测试本身，然后，让mocha去自动运行所有的测试，并给出测试结果。</p>
+<p>mocha的特点主要有：</p>
+<p>既可以测试简单的JavaScript函数，又可以测试异步代码，因为异步是JavaScript的特性之一；</p>
+<p>可以自动运行所有测试，也可以只运行特定的测试；</p>
+<p>可以支持before、after、beforeEach和afterEach来编写初始化代码。</p>
+<h4 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h4><p>包裹it们</p>
+<p>第一个参数是测试的名字</p>
+<p>第二个参数是一个函数，函数里是it</p>
+<h4 id="it"><a href="#it" class="headerlink" title="it"></a>it</h4><p>是各个测试用例</p>
+<p>第一个参数是测试用例的描述</p>
+<p>第二个参数是一个函数，函数体就是测试的内容，assert们</p>
+<h3 id="supertest"><a href="#supertest" class="headerlink" title="supertest"></a>supertest</h3><p>网络测试<br>构造请求，expect断言 判断回复</p>
+<h3 id="node自带断言库-assert"><a href="#node自带断言库-assert" class="headerlink" title="node自带断言库 assert"></a>node自带断言库 assert</h3><h2 id="如何写好测试"><a href="#如何写好测试" class="headerlink" title="如何写好测试"></a>如何写好测试</h2><p>所有人都假设TDD以后软件质量一定提高到最高境界了，但是测试代码也是代码，也有合理不合理的问题，也有价值与维护成本，不好的测试代码会降低效率<br>那么如何写好测试代码呢</p>
+<blockquote>
+<p>测试的核心是“可测试“，可测试意味着好的代码架构，写出可测试代码是优良测试的必要条件。</p>
+</blockquote>
+<blockquote>
+<p>测试驱动开发不是测试人员驱动。<br>这种开发方法完全是开发人员自行实施的，要点在于开发功能之前先开发该功能的测试程序，当然一开始测试程序的结果是失败的，然后去实现功能，让测试结果成功通过<br>测试驱动也不是测试驱动项目运转</p>
+</blockquote>
+<blockquote>
+<p>因为国内大多数程序员写的代码粒度太粗，无法测试。</p>
+</blockquote>
+<p>编写测试的原则是，一次只测一种情况，且测试代码要非常简单。</p>
+<h2 id="TDD和时间的关系"><a href="#TDD和时间的关系" class="headerlink" title="TDD和时间的关系"></a>TDD和时间的关系</h2><blockquote>
+<p>如果时间够，自然可以TDD。如果时间不够，有人可以tdd，测试先行，不代表真的要先写测试。tdd像一种工具或者流程，其背后有它自己的思维，掌握了思维，没有按流程出招，或许就表示tdd已死了吧。如果楼主是指形式或者招式，那么其在某些情况下还是继续存活的。比如时间足够，而程序员足够热爱它</p>
+</blockquote>
+<blockquote>
+<p>TDD只是一个概念，时间允许的话每个重要的方法业务都写单元测试，涉及正确性测试，边界测试，错误测试等等。之后代码有改动再跑单元测试就可以了。这样开发会节省挺多时间。</p>
+</blockquote>
+<p>和时间的关系，写测试要消耗时间<br>这是一个问题，很多公司的迭代周期比较短，比如半个月。那么如何搞TDD呢</p>
+<h2 id="TDD的好处"><a href="#TDD的好处" class="headerlink" title="TDD的好处"></a>TDD的好处</h2><blockquote>
+<p>TDD好处其实很简单：</p>
+<ol>
+<li>帮你整理需求</li>
+<li>帮你设计接口（空想的话很容易设计出屎）</li>
+<li>帮你做regression和给以后重构做准备</li>
+</ol>
+</blockquote>
+<p>提高程序健壮性</p>
+<blockquote>
+<p>TDD会鼓励你对现有代码，更频繁，更敏捷地进行改变<br>它带给你的是，更少的regression，更少的debuggingtime，以及更多的勇气来refactor</p>
+</blockquote>
+<blockquote>
+<p>是tdd重新让我编程的信心和乐趣。<br>我不爱用眼睛看检查运行结果，只要改动之后，一运行看到一长排的勾我就去冲杯香飘飘喝吧喝吧，喝了睡觉去了</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>过度测试是存在。但一些看似过度的testmethod确实揪出了bug。国内中小公司(没去过大公司，不知道啥情况)从上到下对测试总是抗拒的态度。他们会迷惑如何在需求变更中控制缺陷，却不愿试着作任何改变。整天鼓吹熬夜搬砖的人是没法沟通的:(。所以总是测试不够，而非过度</p>
+</blockquote>
+<p>要会单元测试，没有deadline的威胁，就是时间要足够<br>适合思路发散常常迷糊的人，让人有安全感，能确定想法落实了<br>可以灵活一些，比较高层的feature在确保接口可测试的前提下，没必要完全tdd。</p>
+<blockquote>
+<p>TDD是否已死先不说，很多程序员连写出基本的整洁代码都做不到，还能指望他先写测试吗？写代码绝对是个技术活，而不是体力活。所以，写代码需要不断修炼，比如code dojo, code kata 至于是否用TDD方式写代码，倒不一定。如果程序员的思维转变，写代码之前先考虑到测试用例、测试场景，也是一个很大的转变，即测试先行。</p>
+</blockquote>
+<blockquote>
+<p>我觉得TDD不火的原因是它对developer的素质要求非常高。新手看到TDD会欢欣鼓舞，但是他们没有能力来实践。老手们在项目的压力下，早就麻木了，先写case还不如写好代码再补case呢，很多东西我还没时间想清楚，怎么写case？不如先写个小功能先，边写边改，等稳定下来再补case. 所以对老手来说也需要不断练习，才能熟悉TDD.</p>
+</blockquote>
+<blockquote>
+<p>其实我们的目的是为了快速的交付有价值，有质量的产品或者服务，赢得公司的生存和发展空间。为了达到这个目的，我们有很多种的手段。但手段不是目的。<br>有很多盲目推崇TDD的所谓敏捷专家，其实是把手段当做目的，而忽略了问题的本质</p>
+</blockquote>
+<blockquote>
+<p>首先理清一个价值观问题，是方法论为生产力服务还是生产力为方法论服务<br>TDD的错误在于，他没有尊重程序员尊重开发实际，让非生产代码通知生产代码</p>
+</blockquote>
+<blockquote>
+<p>TDD 力量和问题都源自 test first。要能 test first，写代码之前要想得更清楚；代码得要有良好的可测试性，而为了可测试性要做一些不直接产生效益的工作；两者都既能推动思考，也能限制思考。TDD 是正确的思想：程序员要保证代码的正确性，和不完美的实践：程序员写测试。</p>
+</blockquote>
+<blockquote>
+<p>目前我们团队也在想办法推行TDD，但是不是标准的TDD，而仅仅是测试先行，并且不用mock这样做可以在实现业务代码之前对于自己的程序要实现什么有一个清晰的认识，而且写程序的过程也变成了“跑通我的单元测试”的过程，这样更加有目标和针对性，当你看到你写完的业务代码能跑通单元测试的时候，是否有种游戏过关的成就感呢？等到全员都逐渐适应这种测试先行的做法，再“得寸进尺”，多要求一点点。</p>
+</blockquote>
+<blockquote>
+<p>测试先行，怎么和开发做交互呢？什么时间调用开发的方法？<br>测试先行是说在实现业务逻辑前先写完单元测试，此时的单元测试肯定不通，之后再逐渐针对测试完善业务代码，最后跑通测试的时候业务代码也就完成了。不是让测试人员先测的意思</p>
+</blockquote>
+<blockquote>
+<p>TDD解决了：1）我要开始写代码了，我从哪开始。 搞个main，还是搞个test2）我不知道那个家伙的代码写的怎么样，以后会不会捅个篓子，要求他TDD好了。CodeReview的时候也轻松点。飞机上写几个小时代码，下来编译一遍过还没有bug的人。你跳出来说，他没有tdd，他LowB，那你是不是有毛病。总之一句话，各种方法论都是解决一个问题——人不行。</p>
+</blockquote>
+<blockquote>
+<p>软件开发说到底还是抽象和逻辑的艺术，TDD只是一种辅助开发手段，并不会减少因为开发人员素质不过硬或者工期短赶工而在开发过程中产生的抽象和逻辑问题。从来没听说过历史上哪位编程高手是因为什么方法论而练成的，人家是数据结构、算法、抽象和逻辑能力真的强大。对了，除了TDD，那什么敏捷、XP、结对、DDD等等，所有抛开实际抽象和逻辑问题的方法论，都是垃圾。</p>
+</blockquote>
+<p>更重要的是  基础的是  数据结构算法  抽象  逻辑能力</p>
+<blockquote>
+<p>TDD在什么情况下最有效？</p>
+<ol>
+<li>一个老系统，</li>
+<li>老系统有还不错的test case</li>
+<li>有很多相关系统依赖老系统</li>
+<li>老系统要推翻重做</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>先阐明观点，TDD没死，只是存活着在一些技术及配合要求比较高的团队，并且是挑业务的。我在互联网行业摸打滚爬了蛮久，历经各种项目，包括PC、游戏、云存储、电商等项目，TDD也是我这几年年一直在推动的事情，大部分失败了，也有些收获，这里大致把所了解以及个人见解说下。拿我所熟悉的互联网行业来说吧，其他传统软件行业经历时间太早，离当前较远，就不乱说了。现在互联网大都流行敏捷开发，其模式大家可自行度娘，但是真正做到的貌似没有，最少我没见过或者听过，很难用定性的词语来形容（语文不好），用个相似度来说吧，当前BAT公司排序为BTA（还是个人见解），用我个人的说法就是作坊式开发，忽略很多流程，只留下骨干的评审、开发、用例评审、转测、回归发布的流程。这个模式特点就是快，从需求提出到发布上线，一般都是一两周的时间，现有三周才能开发完成的业务。当然这里也有提出异议，说我太片面了，不过我说的大部分的互联网公司业务，保守估计60%的比例吧。解释完了互联网公司的开发模式，接下来我们回到TDD，至于TDD的概念，我就不科普了，自行度娘。其中TDD有一个特点非常明确，基本上可以作为是否做到的标签。这就是测试架构先于开发完成，并可对开发完成大部分模块进行测试（个人的理解，标准定义自行百度）。为了达到这个目的，我们搬出几个要素出来：时间、人、效果、方式。时间：什么时候完成，项目时间大约多久可以做TDD，TDD占项目时间大约多少比例合适。人：谁来做，一个人的项目我这里不谈，只谈多人协作项目，开发做还是测试来做？效果：要达成什么效果，以什么为合格的TDD的指标，功能覆盖？代码覆盖率？方式：要怎么做，开发一套自动化框架，还是用先协商接口用单测来完成，这里特别要提出的是，需要考虑后期维护的代价。</p>
+</blockquote>
+<blockquote>
+<p>TDD 推行的最大问题在于，大多数程序员还不会「写测试用例」和「重构」。<br>我认为推行TDD主要在两个方面努力，即意识和能力（好像任何事情都是这两方面哈）。意识方面主要是：认识到自己原有编程方法的不足；搞清楚TDD的价值所在，如何弥补原有方法的不足；心态开放，勇于尝试新鲜事物，不要浅尝辄止，要持续改进。意识和能力没有先后关系，而是在不断学习和实践过程中同时提高。在这篇文章中，我更想谈的是能力。我见到初接触TDD的人常犯下面的错误：在声明测试方法后，便开始写实现代码；写完“所有”的测试代码才开始写实现；一次实现过多的代码（超出当前测试覆盖的业务）；从不重构；测试实现细节而不是接口行为；TDD真是看起来容易，做起来难。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">Red--&gt;Green</span><br><span class="line">Green--&gt;Refactor</span><br><span class="line">Refactor--&gt;Red</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面这个图一目了然，但其实每一步都是对能力有要求的：红测试先行并不是说不需要思考，直接开始写代码。在开始写代码之前要进行需求分析，将需求分解为任务列表，再从列表中挑选一个任务，转换成一组测试用例，然后不断循环去实现。测试代码其实是产品代码的“用户”，在写测试代码时你就要考虑如何“使用”产品代码，是一个实例方法还是一个类方法，是从构造函数传参还是从方法调用传参，方法的命名，返回值等。这时其实我们就是在做设计，而且设计以代码来体现，比在脑袋中空想要更直观。很多人不懂“意图式编程”，总是习惯先实现一个东西，再去调用它。而测试先行就要求先使用，再实现。这样能少走很多弯路，减少返工。无法把测试前置的原因往往在于，测试的是「实现」，也就是你写的是「白盒」测试。这样的测试根本没有价值，重构的时候会成为维护负担。而好的做法是测试「做什么」，而不是「怎么做」。绿以最快的速度让测试变绿，意味着我们通常用最直接但可能并不优雅的方式，比如复制代码。然后小步重构，直到符合简单设计的原则：通过所有测试每个概念都被清楚地表达没有重复没有多余的东西难的是要让实现刚好满足当前的测试，不做过度的设计，不写多余的代码。因为如果你写多了，除了引入复杂性以外，多的那部分就没有测试能覆盖到。或者你后面的测试写出来就能直接变绿，你就没办法按TDD的节奏进行下去了。重构首先要能识别坏味道，一些低级的Smell，很容易识别，比如：Magic Number，重复代码，太大的类，太长的方法，命名等。但更高级的如Feature Envy，Lazy Class等就比较难以识别。只要识别到Smell，知道用什么手法去重构，剩下的就比较简单了，现代的IDE，尤其是JetBrains的产品，对重构的支持非常强大，几乎都可以用快捷键完成。选对工具非常重要，善假于物能极大提高开发效率。但也不能过分依赖工具，要明白每一个手法背后的原理。所以推荐每个想要实践TDD的开发者，一定要先读《重构》。最后我想说：TDD不是银弹，不可能适合所有的场景，但这不应该成为我们拒绝它的理由。也不要轻易否定TDD，如果要否定，起码要在认真实践过之后。</p>
+</blockquote>
+<h1 id="TDD教程"><a href="#TDD教程" class="headerlink" title="TDD教程"></a>TDD教程</h1><p>总览</p>
+<p>TDD的理解和讲解</p>
+<p>基线描述</p>
+<p>能够讲出来科学的TDD步骤，和TDD的三个主要的状态<br>掌握mock技巧，能够讲出几种mock的场景<br>了解SetUp的作用<br>会写TestCase<br>给出题目可以驱动着写出来<br>细节如下：</p>
+<p>能够讲出来科学的TDD步骤，和TDD的三个主要的状态</p>
+<p>正确的TDD的步骤至少包含下面的几个点，写一个TestCase，运行，得到期望的失败，写实现，重构</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>TDD笔记</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Benny">Benny</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-08, 19:49:33</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-09, 18:43:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/08/TDD笔记/" title="TDD笔记">https://benny233.github.io/2020/06/08/TDD笔记/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 Benny&#39;s Notebook</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#基础','#网络','#数据库','#CSS','#HTML',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #FCC3B2;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #ffffff !important;
+    }
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

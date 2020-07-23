@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>设计需求分析与方案选择 | Benny&#39;s Notebook</title>
+  <meta name="keywords" content>
+  <meta name="description" content="设计需求分析与方案选择 | Benny&#39;s Notebook">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="gallery">
+<meta property="og:url" content="https://benny233.github.io/gallery/index.html">
+<meta property="og:site_name" content="Benny&#39;s Notebook">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-06T10:04:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gallery">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Benny</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/Benny233" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:liubenyi2333@gmail.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(34)</small></div></li>
+    
+        
+            
+            <li><div data-rel="运维">运维<small>(5)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="区块链">区块链<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="技术">技术<small>(8)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="手册">手册<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端">前端<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="写作">写作<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="综合能力">综合能力<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="周打卡">周打卡<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="产品">产品<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="34">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">数据库</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">CSS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">HTML</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="运维 "
+           href="/2020/06/08/Docker笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Docker笔记">Docker笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:32">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/Fabric基础笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Fabric基础笔记">Fabric基础笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:32">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2019/10/14/HTTP基础/"
+           data-tag="基础,网络"
+           data-author="" >
+            <span class="post-title" title="HTTP基础">HTTP基础</span>
+            <span class="post-date" title="2019-10-14 11:43:22">2019/10/14</span>
+        </a>
+        
+        <a  class="手册 "
+           href="/2020/06/08/Linux命令手册/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux常用命令">Linux常用命令</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2019/10/10/MySQL基础/"
+           data-tag="基础,数据库"
+           data-author="" >
+            <span class="post-title" title="MySQL基础">MySQL基础</span>
+            <span class="post-date" title="2019-10-10 14:57:39">2019/10/10</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/08/Nginx笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Nginx笔记">Nginx笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2019/10/10/Redis基础/"
+           data-tag="基础,数据库"
+           data-author="" >
+            <span class="post-title" title="Redis基础">Redis基础</span>
+            <span class="post-date" title="2019-10-10 16:29:35">2019/10/10</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/TDD笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TDD笔记">TDD笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/11/04/css基础/"
+           data-tag="基础,CSS"
+           data-author="" >
+            <span class="post-title" title="css基础">css基础</span>
+            <span class="post-date" title="2019-11-04 14:50:28">2019/11/04</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/cs总结/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="cs总结">cs总结</span>
+            <span class="post-date" title="2020-06-08 19:49:32">2020/06/08</span>
+        </a>
+        
+        <a  class="前端 "
+           href="/2019/11/04/html基础/"
+           data-tag="基础,HTML"
+           data-author="" >
+            <span class="post-title" title="html基础">html基础</span>
+            <span class="post-date" title="2019-11-04 14:48:47">2019/11/04</span>
+        </a>
+        
+        <a  class="手册 "
+           href="/2020/06/08/iterm手册/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="iterm快捷键总结">iterm快捷键总结</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/08/makefile手册/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Makefile笔记">Makefile笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/以太坊/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="以太坊笔记">以太坊笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/共识算法详解/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="共识算法详解">共识算法详解</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/区块链/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链基础知识">区块链基础知识</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/区块链中的密码学技术/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链中的密码学技术">区块链中的密码学技术</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/区块链架构/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="区块链架构">区块链架构</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="写作 "
+           href="/2019/12/03/又一个梦/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="又一个梦">又一个梦</span>
+            <span class="post-date" title="2019-12-03 10:51:47">2019/12/03</span>
+        </a>
+        
+        <a  class="写作 "
+           href="/2019/12/04/双一个梦/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="双一个梦">双一个梦</span>
+            <span class="post-date" title="2019-12-04 10:51:47">2019/12/04</span>
+        </a>
+        
+        <a  class="综合能力 "
+           href="/2020/06/08/合作的进化/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="合作的进化">合作的进化</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="周打卡 "
+           href="/2019/06/04/周打卡1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="周打卡-1">周打卡-1</span>
+            <span class="post-date" title="2019-06-04 17:51:47">2019/06/04</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/基础数据结构/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基础数据结构">基础数据结构</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/敏捷编码/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="敏捷编码">敏捷编码</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/智能合约基础笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="智能合约基础笔记">智能合约基础笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="写作 "
+           href="/2019/12/01/有一个梦/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="有一个梦">有一个梦</span>
+            <span class="post-date" title="2019-12-01 17:51:47">2019/12/01</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2020/06/08/用户调研思考/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用户调研思考">用户调研思考</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="区块链 "
+           href="/2020/06/08/比特币/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="比特币基础知识">比特币基础知识</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2020/06/08/用研笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="用研笔记">用研笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2020/06/08/算法笔记/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="算法笔记">算法笔记</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2020/06/08/设计需求分析与方案选择/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="设计需求分析与方案选择">设计需求分析与方案选择</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2020/06/08/部署流程/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="部署流程">部署流程</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+        <a  class="运维 "
+           href="/2019/10/05/阿里云效搭建单机自动化部署系统/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="阿里云效搭建单机自动化部署系统">阿里云效搭建单机自动化部署系统</span>
+            <span class="post-date" title="2019-10-05 00:24:29">2019/10/05</span>
+        </a>
+        
+        <a  class="综合能力 "
+           href="/2020/06/08/非暴力沟通/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="非暴力沟通">非暴力沟通</span>
+            <span class="post-date" title="2020-06-08 19:49:33">2020/06/08</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-设计需求分析与方案选择" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">设计需求分析与方案选择</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="产品">产品</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-06-14 10:56:04'>2020-06-08 19:49</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#设计方案不能令人满意的原因"><span class="toc-text">设计方案不能令人满意的原因</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#业务需求-业务目的-业务目标"><span class="toc-text">业务需求 = 业务目的 + 业务目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户需求-目标用户（特征、经验）-场景-行为-体验目标"><span class="toc-text">用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户体验路径"><span class="toc-text">用户体验路径</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需求分析四步"><span class="toc-text">需求分析四步</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-分析业务需求"><span class="toc-text">一 分析业务需求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#互联网产品常见的目标（提升-降低）"><span class="toc-text">互联网产品常见的目标（提升/降低）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#制定具体的目标时，要符合smart原则"><span class="toc-text">制定具体的目标时，要符合smart原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#没有目标导致的结果"><span class="toc-text">没有目标导致的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#了解目的和目标之后"><span class="toc-text">了解目的和目标之后</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-分析用户需求"><span class="toc-text">二 分析用户需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-分解关键因素"><span class="toc-text">三 分解关键因素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-归纳设计需求，明确设计策略"><span class="toc-text">四 归纳设计需求，明确设计策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结果"><span class="toc-text">结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#技巧"><span class="toc-text">技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何选择解决方案"><span class="toc-text">如何选择解决方案</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>设计师的基本思路是，解决了什么问题，为什么要这样解决</p>
+<p>了解问题比提供解决方案重要</p>
+<h3 id="设计方案不能令人满意的原因"><a href="#设计方案不能令人满意的原因" class="headerlink" title="设计方案不能令人满意的原因"></a>设计方案不能令人满意的原因</h3><ol>
+<li>没有细致的沟通==业务需求==，一直改方案，没有自己的观点</li>
+<li>没有仔细的分析==用户需求==，只是简单的进行页面排版</li>
+<li>没有对==用户体验路径==进行仔细分析，缺乏一个好的方式引导用户使用</li>
+</ol>
+<h4 id="业务需求-业务目的-业务目标"><a href="#业务需求-业务目的-业务目标" class="headerlink" title="业务需求 = 业务目的 + 业务目标"></a>业务需求 = 业务目的 + 业务目标</h4><p>业务目的：为什么要做这块业务，当中存在哪些问题<br>业务目标：做了这块业务之后，产品期望得到怎样的结果</p>
+<h4 id="用户需求-目标用户（特征、经验）-场景-行为-体验目标"><a href="#用户需求-目标用户（特征、经验）-场景-行为-体验目标" class="headerlink" title="用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标"></a>用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标</h4><p>谁在什么时候有什么样的行为，目标是什么</p>
+<h4 id="用户体验路径"><a href="#用户体验路径" class="headerlink" title="用户体验路径"></a>用户体验路径</h4><p>搞清楚用户在使用前，使用中，使用后的各个接触点，确保设计方案能够形成闭环</p>
+<h1 id="需求分析四步"><a href="#需求分析四步" class="headerlink" title="需求分析四步"></a>需求分析四步</h1><h2 id="一-分析业务需求"><a href="#一-分析业务需求" class="headerlink" title="一 分析业务需求"></a>一 分析业务需求</h2><p>业务需求 = 业务目的 + 业务目标<br>业务目的：为什么要做这块业务，当中存在哪些问题<br>业务目标：做了这块业务之后，产品期望得到怎样的结果</p>
+<p>目的是达到了某个目标之后想要做的事情，也就是实现目标的真正动机</p>
+<p>例：</p>
+<table>
+<thead>
+<tr>
+<th>业务需求</th>
+<th>业务目的</th>
+<th>业务目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注册</td>
+<td>通过登记用户信息，以方便产品进行用户管理</td>
+<td>提高注册页面的转化率</td>
+</tr>
+</tbody>
+</table>
+<p>提供用户注册是一个业务需求，提高注册转化率是它的业务目标。当我们提高了注册转化率，就能获得更多的注册用户数，从而实现有效进行用户管理的目的。</p>
+<h3 id="互联网产品常见的目标（提升-降低）"><a href="#互联网产品常见的目标（提升-降低）" class="headerlink" title="互联网产品常见的目标（提升/降低）"></a>互联网产品常见的目标（提升/降低）</h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>常见目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>产品类</td>
+<td>PV，UV，用户数，转化率，留存率，活跃度等等</td>
+</tr>
+<tr>
+<td>市场类</td>
+<td>传播量，市场份额，各种排名等</td>
+</tr>
+<tr>
+<td>品牌类</td>
+<td>服务认知，品牌认知，品牌忠诚度等等</td>
+</tr>
+<tr>
+<td>营收类</td>
+<td>销售量，销售额，利润率，ROI等等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="制定具体的目标时，要符合smart原则"><a href="#制定具体的目标时，要符合smart原则" class="headerlink" title="制定具体的目标时，要符合smart原则"></a>制定具体的目标时，要符合smart原则</h3><p>S:specific，具体<br>M:measurable，可衡量<br>A:attainable，可实现<br>R:relevant，有关联<br>T:time-based，有时限</p>
+<h3 id="没有目标导致的结果"><a href="#没有目标导致的结果" class="headerlink" title="没有目标导致的结果"></a>没有目标导致的结果</h3><ol>
+<li>方案的讨论容易发散</li>
+<li>方案的评估缺乏评判标准</li>
+<li>方案的效果无法衡量<br>4.</li>
+</ol>
+<h3 id="了解目的和目标之后"><a href="#了解目的和目标之后" class="headerlink" title="了解目的和目标之后"></a>了解目的和目标之后</h3><h2 id="二-分析用户需求"><a href="#二-分析用户需求" class="headerlink" title="二 分析用户需求"></a>二 分析用户需求</h2><p>用户需求= 目标用户（特征、经验）+ 场景 + 行为 + 体验目标<br>谁在什么时候有什么样的行为，目标是什么</p>
+<h2 id="三-分解关键因素"><a href="#三-分解关键因素" class="headerlink" title="三 分解关键因素"></a>三 分解关键因素</h2><p>用户的动机，担忧，障碍</p>
+<p>实现业务目标的关键因素</p>
+<ol>
+<li>创造动机，促进用户行为</li>
+<li>排除担忧，排除行为前的担忧</li>
+<li>解决障碍，解决行为中的障碍</li>
+</ol>
+<h2 id="四-归纳设计需求，明确设计策略"><a href="#四-归纳设计需求，明确设计策略" class="headerlink" title="四 归纳设计需求，明确设计策略"></a>四 归纳设计需求，明确设计策略</h2><h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>将业务目标，用户目标转化成有效的解决方案</p>
+<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><p>如何将==业务目标==转化为==用户行为==，即通过引导用户的使用来帮助产品实现目标</p>
+<p>从设计==用户行为==到设计==用户界面==：<br>用户行为决定了用户界面，用户界面页导致了用户会出现什么样的行为</p>
+<h3 id="如何选择解决方案"><a href="#如何选择解决方案" class="headerlink" title="如何选择解决方案"></a>如何选择解决方案</h3>
+      
+       
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>设计需求分析与方案选择</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Benny">Benny</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-06-08, 19:49:33</p>
+    <p><span class="copy-title">最后更新:</span>2018-06-14, 10:56:04</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/06/08/设计需求分析与方案选择/" title="设计需求分析与方案选择">https://benny233.github.io/2020/06/08/设计需求分析与方案选择/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019 Benny&#39;s Notebook</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#基础','#网络','#数据库','#CSS','#HTML',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #FCC3B2;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #ffffff !important;
+    }
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
